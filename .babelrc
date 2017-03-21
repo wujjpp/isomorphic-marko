@@ -1,12 +1,9 @@
 {
   "presets": [
-    [
-      "latest",
-      "es2015"
-    ],
+    "latest",
     "stage-0"
   ],
-  "plugins":[
+  "plugins": [
     "add-module-exports"
   ]
 }
