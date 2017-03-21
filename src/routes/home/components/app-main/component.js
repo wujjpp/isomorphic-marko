@@ -1,4 +1,4 @@
-import toastr from 'toastr'
+
 
 export default class Home {
 
@@ -8,9 +8,6 @@ export default class Home {
   }
 
   onMount() {
-    $('#btn').click(function(){
-      toastr.success('Have fun storming the castle!', 'Miracle Max Says')
-    });
   }
 
   onRender() {

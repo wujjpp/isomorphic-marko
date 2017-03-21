@@ -1,3 +1,5 @@
+import toastr from 'toastr'
+
 export default class Home {
   onMount() {
     $('.chart').easyPieChart({
@@ -6,6 +8,11 @@ export default class Home {
         $(this.el).find('.percent').text(Math.round(percent));
       }
     });
+
+    $('#btn').click(function(){
+      toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+    });
+    
   }
 
   onCreate(input) {

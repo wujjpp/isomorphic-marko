@@ -18,6 +18,7 @@
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "helmet": "^3.5.0",
+    "markdown": "^0.5.0",
     "marko": "^4.1.2"
   },
   "devDependencies": {

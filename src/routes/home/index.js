@@ -1,7 +1,7 @@
-var template = require('./layout.marko');
-var assets = require('../../../assets');
+import template from './layout.marko'
+import assets from '../../../assets'
 
-module.exports = function(req, res) {
+export default function(req, res) {
 
   let context = req.context.assign({
     assets: assets.home,

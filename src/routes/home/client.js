@@ -1,5 +1,4 @@
 import '../../styles/bootstrap/bootstrap.scss'
-import 'toastr/toastr.scss'
 import 'jquery'
 import 'bootstrap-sass/assets/javascripts/bootstrap.min'
 import './layout.marko'
