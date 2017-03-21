@@ -41,14 +41,14 @@ $ npm run build
 ├── /public/                     # Static files which are copied into the /build/public folder
 ├── /src/                        # The source code of the application
 │   ├── /components/             # top level marko components
-│   ├── /layouts/                # layout template
+│   ├── /layouts/                # layout marko
 │   ├── /routes/                 # routes or pages
 │   │   ├── /home/               # page
 │   │   │   ├── /components      # page level compoment
 │   │   │   ├── /images          # page level images
 │   │   │   ├── client.js        # entry of client script
 │   │   │   ├── index.js         # router for server side
-│   │   │   └── template.marko   # page template
+│   │   │   └── layout.marko     # page template marko
 │   │   └── /xxxx/               # xxxx page    
 │   └── /styles/                 # global stylesheets
 ├── /tests/                      # Unit and end-to-end tests

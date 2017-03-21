@@ -1,4 +1,4 @@
-var template = require('./template.marko');
+var template = require('./layout.marko');
 var assets = require('../../../assets');
 
 module.exports = function(req, res) {
