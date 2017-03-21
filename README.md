@@ -25,18 +25,21 @@ $ npm install
 ```
 
 ## How to Run and Build
-Run
+### Run
 ```shell
 $ npm start
  ```
 
-Build
+### Build
 ```shell
 $ npm run build
 ```
 
-About CDN, sometimes, we should host our static files(js,css,image and etc), in this case you should edit `/tools/config.js`,
-for example: if our cdn root is http://cache.mycdn.com/, change `//cache.YourCDN.com` to `//cache.mycdn.com`, then use the following command to build, after built, upload the public folder to CDN, that all.
+### About CDN
+Sometimes, we should host our static files(js,css,image and etc), in this case you should edit `/tools/config.js`,
+for example: if our cdn root is http://cache.mycdn.com/, change `//cache.YourCDN.com` to `//cache.mycdn.com`
+
+__/tools/config.js__
 ```
 const shared = {
   dist: 'build',
@@ -56,6 +59,7 @@ const config = {
 
 export default Object.assign({}, shared, config)
 ```
+then use the following command to build, after built, upload the `/publish/public` folder to CDN, that all.
 ```shell
 $ npm run build -- prod
 ```

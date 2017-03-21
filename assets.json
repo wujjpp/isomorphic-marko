@@ -1,10 +1,10 @@
 {
   "test": {
-    "js": "//cache.YourCDN.com/test/main.5a57dbce.js",
-    "css": "//cache.YourCDN.com/test/style.5a57dbce.css"
+    "js": "/test/main.4f13ebbc.js",
+    "css": "/test/style.4f13ebbc.css"
   },
   "home": {
-    "js": "//cache.YourCDN.com/home/main.5a57dbce.js",
-    "css": "//cache.YourCDN.com/home/style.5a57dbce.css"
+    "js": "/home/main.4f13ebbc.js",
+    "css": "/home/style.4f13ebbc.css"
   }
 }
