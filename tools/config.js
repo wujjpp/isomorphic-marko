@@ -12,14 +12,9 @@ const config = {
   dev: {
     publicPath: 'http://localhost:' + shared.frontPort + '/'
   },
-  sit: {
-    publicPath: '//sitcache.qixin.com/web-c/'
-  },
-  uat: {
-    publicPath: '//uatcache.qixin.com/web-c/'
-  },
+
   prod: {
-    publicPath: '//cache.qixin.com/web-c/'
+    publicPath: '//cache.YourCDN.com/' //For CDN
   }
 };
 

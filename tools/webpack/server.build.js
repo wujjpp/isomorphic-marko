@@ -112,14 +112,14 @@ export default {
 
     new MarkoServerBundlePatcherPlugin(),
 
-    // new webpack.optimize.UglifyJsPlugin({
-    //       sourceMap: true,
-    //       comments: false,
-    //       compress: {
-    //         warnings: false
-    //       },
-    //       /*mangle: false*/
-    //     })
+    new webpack.optimize.UglifyJsPlugin({
+          sourceMap: true,
+          comments: false,
+          compress: {
+            warnings: false
+          },
+          /*mangle: false*/
+        })
   ],
 
   stats: {

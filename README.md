@@ -30,10 +30,36 @@ Run
 $ npm start
  ```
 
-Build - the build results located at "publish" forlder
+Build
 ```shell
 $ npm run build
 ```
+
+About CDN, sometimes, we should host our static files(js,css,image and etc), in this case you should edit `/tools/config.js`,
+for example: if our cdn root is http://cache.mycdn.com/, change `//cache.YourCDN.com` to `//cache.mycdn.com`, then use the following command to build, after built, upload the public folder to CDN, that all.
+```
+const shared = {
+  dist: 'build',
+  frontPort: 3000, //front-end port
+  backendPort: 9000 //backend-server port
+};
+
+const config = {
+  dev: {
+    publicPath: 'http://localhost:' + shared.frontPort + '/'
+  },
+
+  prod: {
+    publicPath: '//cache.YourCDN.com/' //For CDN root url goes here, change the url to you CDN root
+  }
+};
+
+export default Object.assign({}, shared, config)
+```
+```shell
+$ npm run build -- prod
+```
+NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
 ## Directory Layout
 ```

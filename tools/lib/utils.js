@@ -30,13 +30,7 @@ export const logger = {
 export const getEnv = () => {
   let env = 'dev'
   if (process.argv.length >= 3) {
-    let args = Array.slice(process.argv, 2)
-    if (args.includes('sit')) {
-      env = 'sit'
-    }
-    if (args.includes('uat')) {
-      env = 'uat'
-    }
+    let args = Array.slice(process.argv, 2)    
     if (args.includes('prod')) {
       env = 'prod'
     }

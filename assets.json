@@ -1,8 +1,10 @@
 {
   "test": {
-    "js": "http://localhost:3000/test.js"
+    "js": "//cache.YourCDN.com/test/main.5a57dbce.js",
+    "css": "//cache.YourCDN.com/test/style.5a57dbce.css"
   },
   "home": {
-    "js": "http://localhost:3000/home.js"
+    "js": "//cache.YourCDN.com/home/main.5a57dbce.js",
+    "css": "//cache.YourCDN.com/home/style.5a57dbce.css"
   }
 }

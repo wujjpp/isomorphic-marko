@@ -12,7 +12,7 @@ export default class Home {
     $('#btn').click(function(){
       toastr.success('Have fun storming the castle!', 'Miracle Max Says')
     });
-    
+
   }
 
   onCreate(input) {
@@ -21,12 +21,12 @@ export default class Home {
   }
 
   onRender() {
-    console.log('onRender');
+    // console.log('onRender');
     // console.log(this);
   }
 
   onUpdate() {
-    console.log('onUpdate');
+    // console.log('onUpdate');
     // console.log(this);
   }
 
