@@ -7,7 +7,7 @@ import Context from './core/context'
 import config from '../tools/config'
 import {markdown} from 'markdown'
 
-const PORT = process.env.PORT || config.backendPort || 9001
+const PORT = process.env.PORT || config.backendPort || 9000
 const app = express()
 
 app.use(helmet())

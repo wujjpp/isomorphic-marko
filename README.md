@@ -59,7 +59,7 @@ const config = {
 
 export default Object.assign({}, shared, config)
 ```
-then use the following command to build, after built, upload the `/publish/public` folder to CDN, that all.
+then use the following command to build, after built, upload the `/publish/public` folder to CDN,  thats all.
 ```shell
 $ npm run build -- prod
 ```
@@ -91,6 +91,7 @@ NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 │   ├── /build-server.js         # Scripts for build server app
 │   ├── /build.js                # Scripts for build client and server
 │   ├── /clean.js                # Cleans up for the output (build) folder
+│   ├── /config.js               # Build config file
 │   ├── /post.config.js          # Configuration for transforming styles with PostCSS plugins
 │   ├── /run.js                  # Helper function for running build automation tasks
 │   └── /start.js                # Launches the development web server with "live reload"

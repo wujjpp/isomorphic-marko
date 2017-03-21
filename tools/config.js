@@ -4,8 +4,8 @@
 
 const shared = {
   dist: 'build',
-  frontPort: 3000, //front-end port
-  backendPort: 9000 //backend-server port
+  frontPort: 3000, //front-end port, browser-sync start port
+  backendPort: 9000 //exporess server port
 };
 
 const config = {
