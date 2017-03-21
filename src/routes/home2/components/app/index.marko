@@ -1,0 +1,14 @@
+import img1 from '../../images/img1.jpg'
+import img2 from '../../images/img2.jpg'
+
+<div>
+  <h1>Marko + Webpack2 + Babel6</h1>
+  <h2>支持ES6, CSS动态刷新</h2>
+  <img src="${img1}" />
+  <img src="${img2}" />
+  <div>click-count: ${input.initCount}</div>
+  <app-counter(input.initCount)/>
+  <if(!input.hideBtn)>
+    <ui-button label="Click me" onClick('increment')/>
+  </if>
+</div>

@@ -1,0 +1,50 @@
+{
+  "name": "marko-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development babel-node ./tools/run start",
+    "start:dist": "node ./build/server.js",
+    "clean": "babel-node ./tools/run clean",
+    "build:client": "cross-env NODE_ENV=production babel-node ./tools/run build-client",
+    "build:server": "cross-env NODE_ENV=production babel-node ./tools/run build-server",
+    "build": "cross-env NODE_ENV=production babel-node ./tools/run build",
+    "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "marko": "^4.1.2"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "chalk": "^1.1.3",
+    "cross-env": "^3.2.4",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "glob": "^7.1.1",
+    "less": "^2.7.2",
+    "less-loader": "^3.0.0",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-sources": "^0.2.0"
+  }
+}

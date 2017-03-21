@@ -1,0 +1,35 @@
+import img1 from '../../images/img1.jpg'
+style {
+}
+style.less {
+
+}
+style.scss {
+  @import "../../../../styles/global.scss";
+  .just-for-test{
+    color:$base-color;
+    font-size:30px;
+  }
+  .test-background-img{
+    background-image:url(../../images/img2.jpg);
+    background-size: cover;
+    margin:10px;
+    width:250px;
+    height:150px;
+  }
+}
+<div>
+  <h1>Marko + Webpack2 + Babel6</h1>
+  <span class="just-for-test" title="test inline style">
+    Test inline style, the font color is from global.scss
+  </span>
+  <div class="test-background-img"/>
+  <div>
+    <img src="${img1}" title="test import image" width="200px"/>
+  </div>
+  <div>click-count: ${input.initCount}</div>
+  <app-counter(input.initCount)/>
+  <if(!input.hideBtn)>
+    <ui-button label="Click me" onClick('increment')/>
+  </if>
+</div>
