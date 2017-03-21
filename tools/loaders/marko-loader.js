@@ -19,7 +19,7 @@ export default function(source) {
   
   this.cacheable()
 
-  logger.info(`Complie marko for npm ${this.options.target}: ${this.resourcePath}`)
+  logger.info(`Complie marko for ${this.options.target}: ${this.resourcePath}`)
 
   if (this.options.target === 'web') {
     let compiled = compiler.compileForBrowser(source, this.resourcePath, {
