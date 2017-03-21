@@ -15,9 +15,9 @@ export default {
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
       './src/routes/home/client.js'
     ],
-    home2: [
+    about: [
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-      './src/routes/home2/client.js'
+      './src/routes/about/client.js'
     ]
   },
 

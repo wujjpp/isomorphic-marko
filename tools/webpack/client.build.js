@@ -12,7 +12,7 @@ export default {
   target: 'web',
   entry: {
     home: './src/routes/home/client.js',
-    home2: './src/routes/home2/client.js',
+    about: './src/routes/about/client.js',
   },
 
   resolve: {

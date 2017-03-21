@@ -2,7 +2,7 @@
   "home": {
     "js": "http://localhost:3000/home.js"
   },
-  "home2": {
-    "js": "http://localhost:3000/home2.js"
+  "about": {
+    "js": "http://localhost:3000/about.js"
   }
 }
