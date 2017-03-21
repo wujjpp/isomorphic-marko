@@ -59,7 +59,7 @@ const config = {
 
 export default Object.assign({}, shared, config)
 ```
-then use the following command to build, after built, upload the `/publish/public` folder to CDN,  thats all.
+then use the following command to build, after built, upload the `/build/public` folder to CDN,  thats all.
 ```shell
 $ npm run build -- prod
 ```
