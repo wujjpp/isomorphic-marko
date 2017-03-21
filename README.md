@@ -37,7 +37,7 @@ $ npm run build
 
 ### About CDN
 Sometimes, we should host our static files(js,css,image and etc), in this case you should edit `/tools/config.js`,
-for example: if our cdn root is http://cache.mycdn.com/, change `//cache.YourCDN.com` to `//cache.mycdn.com`
+for example: if our cdn root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
 
 __/tools/config.js__
 ```
@@ -104,6 +104,5 @@ $ git checkout master
 $ git pull origin master
 $ npm install
 ```
-Free feel to contact [me](mailto:wujjpp@hotmail.com), if you have any question.
 
 Made with ♥ by [Wu Jian Ping](mailto:wujjpp@hotmail.com)
