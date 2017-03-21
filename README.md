@@ -104,6 +104,5 @@ $ git checkout master
 $ git pull origin master
 $ npm install
 ```
-Free feel to contact [me](mailto:wujjpp@hotmail.com), if you have any question.
 
 Made with ♥ by [Wu Jian Ping](mailto:wujjpp@hotmail.com)
