@@ -58,7 +58,6 @@ $ npm run build
 │   └── /start.js                # Launches the development web server with "live reload"
 └── package.json                 # The list of 3rd party libraries and utilities
 ```
----
 
 ## How to Update
 ```shell
