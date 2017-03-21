@@ -15,12 +15,18 @@ app.use(compression())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(function(req, res, next) {
-  req.context = new Context
+  let context = new Context()
+  context.user = {
+    name: 'foo',
+    email:'xxx@xxx.com'
+  }
+  req.context = context;
+
   next();
 })
 
 app.get('/', require('./routes/home'))
-app.get('/about', require('./routes/about'))
+app.get('/test', require('./routes/test'))
 
 app.listen(PORT, function(err) {
   if (err) {

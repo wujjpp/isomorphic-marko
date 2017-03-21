@@ -12,7 +12,7 @@ export default {
   target: 'web',
   entry: {
     home: './src/routes/home/client.js',
-    about: './src/routes/about/client.js',
+    test: './src/routes/test/client.js',
   },
 
   resolve: {
@@ -143,6 +143,14 @@ export default {
       filename: 'assets.json',
       prettyPrint: true
     }),
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    }),
+
     new ExtractTextPlugin({
       filename: `[name]/style.[hash:8].css`,
       allChunks: true

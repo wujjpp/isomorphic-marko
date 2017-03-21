@@ -1,12 +1,56 @@
-style {
-  .navigator{
-    font-size:13px;
-    color: #333;
-  }
-}
-<p>
-  <a href="/" class='navigator'>Home</a>
-</p>
-<p>
-  <a href="/about"  class='navigator'>About</a>
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"/>
+        <span class="icon-bar"/>
+        <span class="icon-bar"/>
+      </button>
+      <a class="navbar-brand" href="javascript:;">Marko Starter Kit</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/test">Tests</a>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
+            role="button" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+            <span class="caret"/>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="javascript:;">Action</a>
+            </li>
+            <li>
+              <a href="javascript:;">Another action</a>
+            </li>
+            <li>
+              <a href="javascript:;">Something else here</a>
+            </li>
+            <li role="separator" class="divider"/>
+            <li class="dropdown-header">Nav header</li>
+            <li>
+              <a href="javascript:;">Separated link</a>
+            </li>
+            <li>
+              <a href="javascript:;">One more separated link</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="javascript:;">${input.email}</a>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>

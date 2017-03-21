@@ -1,0 +1,67 @@
+/**
+ * Created by JP on 2017/2/15.
+ */
+
+$color-green-jungle: #26C281;
+
+//字体
+$font-family-sans-serif: "Open Sans", "微软雅黑", "Microsoft Yahei", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+//基础字体大小
+$font-size-base: 13px !default;
+
+//h1,h2... font weight
+$headings-font-weight: 300 !default;
+
+$brand-primary: #337ab7 !default; // #337ab7
+$brand-success: #36c6d3 !default;
+$brand-info: #659be0 !default;
+$brand-warning: #F1C40F !default;
+$brand-danger: #ed6b75 !default;
+
+$state-success-text: #27a4b0;
+$state-success-bg: #abe7ed;
+$state-success-border: #abe7ed;
+
+$state-info-text: #327ad5;
+$state-info-bg: #e0ebf9;
+$state-info-border: #e0ebf9;
+
+$state-warning-text: #c29d0b;
+$state-warning-bg: #f9e491;
+$state-warning-border: #f9e491;
+
+$state-danger-text: #e73d4a;
+$state-danger-bg: #fbe1e3;
+$state-danger-border: #fbe1e3;
+
+//default button border color
+$btn-primary-border:             $brand-primary !default;
+$btn-success-border:             $brand-success !default;
+$btn-info-border:                $brand-info !default;
+$btn-warning-border:             $brand-warning !default;
+$btn-danger-border:              $brand-danger !default;
+
+//border radius
+$border-radius-base: 0px !default;
+$border-radius-large: 1px !default;
+$border-radius-small: 0px !default;
+
+$panel-border-radius: 0px !default;
+
+//** Border color for inputs on focus
+$input-border-focus: $color-green-jungle !default;
+
+//** Placeholder text color
+$input-color-placeholder: #999 !default;
+
+//** `.form-group` margin
+$form-group-margin-bottom: 15px !default;
+
+//Previous, Next
+$pager-border-radius: 0px !default;
+
+//tooltip背景色和箭头颜色
+$tooltip-bg: #000 !default;
+
+//消息badge
+$badge-border-radius: 12px !default;

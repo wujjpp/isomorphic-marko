@@ -35,6 +35,11 @@ export default {
       },
 
       {
+        test: /\.(scss|less|css)$/i,
+        use: ['null-loader']
+      },
+
+      {
         test: /\.(ico|gif|png|jpg|jpeg|webp)$/i,
         use: [{
           loader: 'file-loader',
@@ -71,7 +76,8 @@ export default {
     (context, request, callback) => {
       const isExternal =
         // the module name start with ('@' or 'a-z') character and contains 'a-z' or '/' or '.' or '-' or '0-9'
-        request.match(/^[@a-z][a-z/.\-0-9]*$/i)
+        request.match(/^[@a-z][a-z/.\-0-9]*$/i)&&
+        !request.match(/\.(css|less|scss)$/i)
         //environment config file, auto generated during build
       //console.log(request + '--------' + Boolean(isExternal))
 

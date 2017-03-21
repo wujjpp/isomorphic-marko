@@ -15,9 +15,9 @@ export default {
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
       './src/routes/home/client.js'
     ],
-    about: [
+    test: [
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-      './src/routes/about/client.js'
+      './src/routes/test/client.js'
     ]
   },
 
@@ -153,6 +153,13 @@ export default {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
     }),
 
     new webpack.HotModuleReplacementPlugin(),

@@ -1,0 +1,71 @@
+import img1 from '../../images/img1.jpg'
+import img2 from '../../images/img2.jpg'
+<!-- the follow code demonstrate you can use inline css, by the way less and scss also be supported -->
+style {
+  .chart {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        Marko6 + Webpack2 + Babel6 <small>Support ES6</small>
+      </h1>
+    </div>
+    <div class="col-md-12">
+      <h2>1. Test import image from marko file</h2>
+      <img src="${img2}" class="img-responsive"/>
+    </div>
+    <div class="col-md-12">
+      <h2>2. Test background</h2>
+      <div class="test-background"/>
+    </div>
+    <div class="col-md-12">
+      <h2>3. Test vdom</h2>
+      <div>
+        Counter in current template: <b>${input.initCount}</b>
+      </div>
+      <app-counter(input.initCount)/>
+      <if(!input.hideBtn)>
+        <div class="btn-group" role="group" aria-label="...">
+          <button onClick('inc') type="button" class="btn btn-default">+</button>
+          <button onClick('dec') type="button" class="btn btn-default">-</button>
+        </div>
+      </if>
+    </div>
+    <div class="col-md-12">
+      <h2>4. Test integrate jquery plugin</h2>
+      <span class="chart" data-percent="86">
+        <span class="percent"/>
+      </span>
+      <span class="btn btn-default" onClick('updateChart')>Update chart</span>
+    </div>
+    <div class="col-md-12">
+      <h2>5. Test icon font</h2>
+      <span class="glyphicon glyphicon-heart" style="font-size:80px"/>
+      <p>glyphicon glyphicon-heart</p>
+    </div>
+  </div>
+</div>

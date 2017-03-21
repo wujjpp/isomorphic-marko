@@ -3,7 +3,7 @@ var assets = require('../../../assets');
 
 module.exports = function(req, res) {
   let context = req.context.assign({
-    assets: assets.about,
+    assets: assets.test,
     initCount: 10
   });
 

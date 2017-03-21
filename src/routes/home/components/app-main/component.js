@@ -1,17 +1,16 @@
-export default class Home {
+import toastr from 'toastr'
 
-  onMount() {
-    console.log('onMount');
-    // console.log(this);
-    // this.state = {
-    //   mounted: false,
-    //   count: this.input.initCount
-    // }
-  }
+export default class Home {
 
   onCreate(input) {
     //console.log('onCreate');
     // console.log(this);
+  }
+
+  onMount() {
+    $('#btn').click(function(){
+      toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+    });
   }
 
   onRender() {
@@ -22,9 +21,5 @@ export default class Home {
   onUpdate() {
     console.log('onUpdate');
     // console.log(this);
-  }
-
-  increment() {
-    this.input = Object.assign({}, this.input, {initCount: this.input.initCount + 1})
   }
 }

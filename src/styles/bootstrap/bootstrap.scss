@@ -1,0 +1,17 @@
+/**
+ * Created by JP on 2017/2/15.
+ */
+
+//setup icon path
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+//import override variables
+@import "variables";
+
+//import bootstrap sass
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
