@@ -70,8 +70,7 @@ $ npm run build
 ## How to Update
 ```shell
 $ git checkout master
-$ git fetch marko-starter-kit
-$ git merge marko-starter-kit/master
+$ git pull origin master
 $ npm install
 ```
 
