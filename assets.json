@@ -1,10 +1,10 @@
 {
   "test": {
-    "js": "/test/main.7348ca93.js",
-    "css": "/test/style.7348ca93.css"
+    "js": "/test/main.459eb5ca.js",
+    "css": "/test/style.459eb5ca.css"
   },
   "home": {
-    "js": "/home/main.7348ca93.js",
-    "css": "/home/style.7348ca93.css"
+    "js": "/home/main.459eb5ca.js",
+    "css": "/home/style.459eb5ca.css"
   }
 }

@@ -6,7 +6,7 @@ import chalk from 'chalk'
 import config from '../config'
 
 export const format = (time) => {
-  return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '[$1] ');
+  return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '[$1] ')
 }
 
 export const logger = {
@@ -45,5 +45,5 @@ export const getEnv = () => {
 }
 
 export const getPublicPath = (env) => {
-  return config[env].publicPath;
+  return config[env].publicPath
 }
