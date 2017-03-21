@@ -3,11 +3,19 @@
 Marko Starter Kit is an opinionated boilerplate for web
 development built on top of [Node.js](https://nodejs.org/),
 [Express](http://expressjs.com/) and
-[Marko 4](http://http://markojs.com/), containing modern web development
-tools such as [Webpack 2](http://webpack.github.io/), [Babel 6](http://babeljs.io/)
+[Marko 4](http://markojs.com/), containing modern web development
+tools such as [Webpack 2](http://webpack.github.io/), [Babel 6](https://babeljs.io/)
 and [Browsersync](http://www.browsersync.io/). Helping you to stay productive
 following the best practices. A solid starting point for both professionals
 and newcomers to the industry.
+
+## Features
+- [Marko](http://markojs.com/)
+- [Webpack2](https://webpack.js.org/)
+- [Babel 6](https://babeljs.io/) from the browser
+- Support client live reload
+- Supports server auto compile and restart
+- Support [less](http://lesscss.org/), [sass](https://sass-lang.com/)
 
 ## How to Install
 ```shell
