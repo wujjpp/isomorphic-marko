@@ -17,39 +17,49 @@ export default {
 
   module: {
     rules: [{
-      test: /\.(js)$/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: './.cache/babel-loader'
-        }
-      }],
-      include: [path.join(process.cwd(), 'src')]
-    }, {
-      test: /\.marko$/,
-      loader: 'marko-loader'
-    }, {
-      test: /\.(scss|less|css)$/i,
-      use: ['null-loader']
-    }, {
-      test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-          emitFile: false
-        }
-      }]
-    }, {
-      test: /\.(woff2?|ttf|eot|svg)$/i,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: 'font/[name].[ext]',
-          emitFile: false
-        }
-      }]
-    }]
+        test: /\.(js)$/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: './.cache/babel-loader'
+          }
+        }],
+        include: [path.join(process.cwd(), 'src')]
+      },
+
+      {
+        test: /\.marko$/,
+        loader: 'marko-loader'
+      },
+
+      {
+        test: /\.(scss|less|css)$/i,
+        use: ['null-loader']
+      },
+
+      {
+        test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            emitFile: false
+          }
+        }]
+      },
+
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'font/[name].[ext]',
+            emitFile: false
+          }
+        }]
+      }
+
+    ]
   },
 
   output: {

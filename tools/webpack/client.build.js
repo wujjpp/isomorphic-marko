@@ -26,7 +26,7 @@ export default {
   output: {
     publicPath: '/',
     path: path.join(process.cwd(), config.dist, 'public'),
-    filename: `[name]/main.[hash:8].js`
+    filename: `[name]/script.[hash:8].js`
   },
 
   module: {

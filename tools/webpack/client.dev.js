@@ -31,8 +31,7 @@ export default {
 
   output: {
     publicPath: '/',
-    path: path.join(process.cwd(), config.dist, 'public'),
-    filename: `[name].js`
+    filename: `[name]/script.js`
   },
 
   module: {
