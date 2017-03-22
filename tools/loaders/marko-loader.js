@@ -7,8 +7,10 @@ import {
   logger
 } from '../lib/utils'
 
-//import fs from 'fs'
+// for way 1
+// import fs from 'fs'
 
+// for way 2
 import VirtualStats from './libs/virtual-stats'
 
 function patchPath(path) { //for windows platform
@@ -16,7 +18,6 @@ function patchPath(path) { //for windows platform
 }
 
 export default function(source) {
-  
   this.cacheable()
 
   logger.info(`Complie marko for ${this.options.target}: ${this.resourcePath}`)
