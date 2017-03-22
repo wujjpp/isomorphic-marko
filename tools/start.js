@@ -29,9 +29,11 @@ async function start() {
   await run(copyPublic, {
     dest: config.dist
   });
+
   devClientConfig.output.publicPath = devServerConfig.output.publicPath = getPublicPath('dev')
 
   await new Promise((resolve) => {
+
     const serverCompiler = webpack(devServerConfig)
     const clientCompiler = webpack(devClientConfig)
 
@@ -39,6 +41,7 @@ async function start() {
       publicPath: devClientConfig.output.publicPath,
       stats: devClientConfig.stats
     })
+
     const wpHotMiddleware = webpackHotMiddleware(clientCompiler)
 
     var bs = null
@@ -54,7 +57,7 @@ async function start() {
           proxyOptions: {
             xfwd: true,
           },
-        },
+        }
       }, resolve)
 
       handleServerBundleCompleted = () => {

@@ -11,13 +11,14 @@ export default {
   target: 'web',
   devtool: 'eval-source-map',
   entry: {
-    home: [
+    "home": [
+      './src/routes/home/client.js',
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-      './src/routes/home/client.js'
+
     ],
-    test: [
+    "test": [
+      './src/routes/test/client.js',
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-      './src/routes/test/client.js'
     ]
   },
 

@@ -11,8 +11,8 @@ import config from '../config'
 export default {
   target: 'web',
   entry: {
-    home: './src/routes/home/client.js',
-    test: './src/routes/test/client.js',
+    "home": './src/routes/home/client.js',
+    "test": './src/routes/test/client.js',
   },
 
   resolve: {
