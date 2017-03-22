@@ -11,15 +11,14 @@ import browserSync from 'browser-sync'
 import {
   format,
   getEnv,
-  getPublicPath
+  getPublicPath,
+  logger
 } from './lib/utils'
 
 import run from './run'
 import clean from './clean'
 import watch from './watch'
 import copyPublic from './copy-public'
-import copyEnvConfig from './copy-env-config'
-
 import config from './config'
 import devClientConfig from './webpack/client.dev'
 import devServerConfig from './webpack/server.dev'
@@ -29,12 +28,7 @@ async function start() {
   await run(clean)
   await run(copyPublic, {
     dest: config.dist
-  })
-  await run(copyEnvConfig, {
-    dest: config.dist,
-    env: env
-  })
-
+  });
   devClientConfig.output.publicPath = devServerConfig.output.publicPath = getPublicPath('dev')
 
   await new Promise((resolve) => {

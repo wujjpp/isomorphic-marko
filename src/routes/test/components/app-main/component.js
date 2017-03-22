@@ -1,4 +1,4 @@
-import toastr from 'toastr'
+
 
 export default class Home {
   onMount() {

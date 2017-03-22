@@ -1,5 +1,3 @@
-
-
 export default class Home {
 
   onCreate(input) {
@@ -7,8 +5,7 @@ export default class Home {
     // console.log(this);
   }
 
-  onMount() {
-  }
+  onMount() {}
 
   onRender() {
     console.log('onRender');

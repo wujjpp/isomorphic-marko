@@ -7,7 +7,7 @@ import {logger} from './lib/utils'
 function run(task, options) {
 
   const start = new Date()
-  logger.chalk(`Starting '${task.name}${options ? ` (${JSON.stringify(options)})` : ''}'...`)
+  logger.info(`Starting '${task.name}${options ? ` (${JSON.stringify(options)})` : ''}'...`)
   return task.func(options).then((resolution) => {
     const end = new Date()
     const time = end.getTime() - start.getTime()

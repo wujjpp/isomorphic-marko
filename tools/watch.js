@@ -9,6 +9,9 @@ import {
   makeDir,
   cleanDir
 } from './lib/fs'
+import {
+  logger
+} from './lib/utils'
 
 async function watch({
   dest
@@ -41,7 +44,7 @@ async function watch({
     }
     const end = new Date()
     const time = end.getTime() - start.getTime()
-    console.log(`[${end}] ${event} '${dist}' after ${time} ms`)
+    logger.info(`${event} '${dist}' after ${time} ms`)
   })
 }
 

@@ -16,21 +16,16 @@ export default {
     rules: [{
         test: /\.js$/i,
         use: ['babel-loader'],
-        include: [
-          path.join(process.cwd(), 'src')
-        ]
+        include: [path.join(process.cwd(), 'src')]
       },
-
       {
         test: /\.marko$/,
         loader: 'marko-loader'
       },
-
       {
         test: /\.(scss|less|css)$/i,
         use: ['null-loader']
       },
-
       {
         test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
         use: [{
@@ -41,7 +36,6 @@ export default {
           }
         }]
       },
-
       {
         test: /\.(woff2?|ttf|eot|svg)$/i,
         use: [{
@@ -62,23 +56,17 @@ export default {
     publicPath: '/'
   },
 
-  externals: [
-    /^\.\/assets\.json$/,
-    /^\.\/env\.json$/,
+  externals: [(context, request, callback) => {
+    const isExternal =
+      //the module name start with ('@' or 'a-z') character and contains 'a-z' or '/' or '.' or '-' or '0-9'
+      request.match(/^[@a-z][a-z/.\-0-9]*$/i) && !request.match(/\.(css|less|scss)$/i)
+    //environment config file, auto generated during build
 
-    (context, request, callback) => {
-      const isExternal =
-        //the module name start with ('@' or 'a-z') character and contains 'a-z' or '/' or '.' or '-' or '0-9'
-        request.match(/^[@a-z][a-z/.\-0-9]*$/i)&&
-        !request.match(/\.(css|less|scss)$/i)
-      //environment config file, auto generated during build
-
-      callback(null, Boolean(isExternal))
-    },
-  ],
+    callback(null, Boolean(isExternal))
+  }],
 
   resolveLoader: {
-    modules: ['tools/loaders', 'node_modules'],
+    modules: ['tools/loaders', 'node_modules']
   },
 
   resolve: {
@@ -113,13 +101,13 @@ export default {
     new MarkoServerBundlePatcherPlugin(),
 
     new webpack.optimize.UglifyJsPlugin({
-          sourceMap: true,
-          comments: false,
-          compress: {
-            warnings: false
-          },
-          /*mangle: false*/
-        })
+      sourceMap: true,
+      comments: false,
+      compress: {
+        warnings: false
+      },
+      /*mangle: false*/
+    })
   ],
 
   stats: {

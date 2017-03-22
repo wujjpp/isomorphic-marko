@@ -10,6 +10,6 @@ async function copyPublic({dest}) {
 }
 
 export default {
-  name: 'copy assets in public folder',
-  func: copyPublic
+  name : 'copy static assets in public folder',
+  func : copyPublic
 }
