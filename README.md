@@ -105,4 +105,4 @@ $ git pull origin master
 $ npm install
 ```
 
-Made with ♥ by [Wu Jian Ping](mailto:wujjpp@hotmail.com)
+Made with ♥ by Wu Jian Ping
