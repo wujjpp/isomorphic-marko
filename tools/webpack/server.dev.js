@@ -5,7 +5,6 @@
 import webpack from 'webpack'
 import path from 'path'
 import serverSharedConfig from './server.shared'
-import VirtualModulePlugin from '../plugins/virtual-module-plugin'
 import MarkoServerBundlePatcherPlugin from '../plugins/marko-server-bundle-patcher-plugin'
 
 export default Object.assign({}, serverSharedConfig, {
@@ -65,7 +64,6 @@ export default Object.assign({}, serverSharedConfig, {
           }
         }]
       }
-
     ]
   },
 
@@ -101,26 +99,6 @@ export default Object.assign({}, serverSharedConfig, {
       maxChunks: 1
     }),
 
-    new MarkoServerBundlePatcherPlugin(),
-
-    new VirtualModulePlugin({
-      moduleName: 'src/assets.json',
-      contents: () => {
-        //generate assets from router settings
-        return JSON.stringify({
-          "test": {
-            "js": "http://localhost:3000/test.js"
-          },
-          "home": {
-            "js": "http://localhost:3000/home.js"
-          }
-        })
-      }
-    })
-  ],
-
-  stats: {
-    colors: true,
-    warnings: false
-  }
+    new MarkoServerBundlePatcherPlugin()
+  ]
 })

@@ -7,6 +7,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import cp from 'child_process'
 import browserSync from 'browser-sync'
+import _ from 'lodash'
 
 import {
   format,
@@ -15,13 +16,18 @@ import {
   logger
 } from './libs/utils'
 
+import {
+  copyPublic
+} from './copy'
+
 import run from './run'
 import clean from './clean'
 import watch from './watch'
-import {copyPublic} from './copy'
+import VirtualModulePlugin from './plugins/virtual-module-plugin'
 import config from './config'
 import devClientConfig from './webpack/client.dev'
 import devServerConfig from './webpack/server.dev'
+import entrySettings from '../entry-settings'
 
 async function start() {
   let env = getEnv()
@@ -32,6 +38,34 @@ async function start() {
 
   await new Promise((resolve) => {
 
+    //load entry setting
+    let entryKeys = _.keys(entrySettings)
+    let virtualAssets = {}
+    let clientEntry = {}
+
+    //prepare config for webpack server and client config
+    _.forEach(entryKeys, (key) => {
+      let entry = entrySettings[key];
+      if (entry.include) {
+        virtualAssets[key] = {
+          "js": `http://localhost:${config.frontPort}/${key}.js`
+        }
+        clientEntry[key] = [entry.src, 'webpack-hot-middleware/client?reload=false']
+      }
+    })
+
+    //attach virtual module plugin to webpack server config
+    devServerConfig.plugins.push(
+      new VirtualModulePlugin({
+        moduleName: 'src/assets.json',
+        contents: virtualAssets
+      })
+    )
+
+    //setup client webpack config's entry
+    devClientConfig.entry = clientEntry;
+
+    // init server and client compiler
     const serverCompiler = webpack(devServerConfig)
     const clientCompiler = webpack(devClientConfig)
 

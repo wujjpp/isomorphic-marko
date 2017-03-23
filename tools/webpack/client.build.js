@@ -10,11 +10,6 @@ import config from '../config'
 import sharedClientConfig from './client.shared'
 
 export default Object.assign({}, sharedClientConfig, {
-  entry: {
-    "home": './src/routes/home/client.js',
-    "test": './src/routes/test/client.js',
-  },
-
   output: {
     publicPath: '/',
     path: path.join(process.cwd(), config.dist, 'public'),

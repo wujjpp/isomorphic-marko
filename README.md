@@ -65,8 +65,8 @@ $ npm run build -- prod
 ```
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
-## Analyse built files
-After built, run the following command to launch "Analyse web"
+## Analyse webpack stats
+After built, run the following command to launch "Analyse web", then choose the stats that you want to analysis
 ```shell
 $ npm run analyse
 ```

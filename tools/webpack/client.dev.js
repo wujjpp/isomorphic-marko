@@ -9,19 +9,7 @@ import sharedClientConfig from './client.shared'
 
 export default Object.assign({}, sharedClientConfig, {
   devtool: 'eval-source-map',
-
-  entry: {
-    "home": [
-      './src/routes/home/client.js',
-      'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-
-    ],
-    "test": [
-      './src/routes/test/client.js',
-      'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
-    ]
-  },
-
+  
   output: {
     publicPath: '/',
     filename: `[name].js`
