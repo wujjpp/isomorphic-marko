@@ -1,4 +1,9 @@
-
+//import only in browser enviroment
+if (__BROWSER__) {
+  require('easy-pie-chart/dist/jquery.easypiechart')
+  require('toastr/toastr.scss')
+  var toastr = require('toastr')
+}
 
 export default class Home {
   onMount() {
@@ -9,25 +14,18 @@ export default class Home {
       }
     });
 
-    $('#btn').click(function(){
+    $('#btn').click(function() {
       toastr.success('Have fun storming the castle!', 'Miracle Max Says')
     });
-
   }
 
-  onCreate(input) {
-    //console.log('onCreate');
-    // console.log(this);
+  onCreate(input, out) {
   }
 
   onRender() {
-    // console.log('onRender');
-    // console.log(this);
   }
 
   onUpdate() {
-    // console.log('onUpdate');
-    // console.log(this);
   }
 
   inc() {
