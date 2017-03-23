@@ -2,7 +2,7 @@
  * Created by JP on 2017/3/20.
  */
 
-import {logger} from './lib/utils'
+import {logger} from './libs/utils'
 
 function run(task, options) {
 
@@ -17,8 +17,8 @@ function run(task, options) {
 }
 
 if (require.main === module && process.argv.length > 2) {
-  delete require.cache[__filename]; // eslint-disable-line no-underscore-dangle
-  const task = require(`./${process.argv[2]}.js`) // eslint-disable-line import/no-dynamic-require
+  delete require.cache[__filename]
+  const task = require(`./${process.argv[2]}.js`)
   run(task).catch((err) => {
     console.error(err.stack)
     process.exit(1)

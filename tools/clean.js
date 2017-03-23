@@ -2,7 +2,7 @@
  * Created by JP on 2017/3/20.
  */
 
-import {cleanDir} from './lib/fs'
+import {cleanDir} from './libs/fs'
 import config from './config'
 
 function clean() {

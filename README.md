@@ -83,7 +83,7 @@ NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 │   └── /styles/                 # global stylesheets
 ├── /tests/                      # Unit and end-to-end tests
 ├── /tools/                      # Build automation scripts and utilities
-│   ├── /lib/                    # Library for build system
+│   ├── /libs/                   # Library for build system
 │   ├── /loaders/                # Custom webpack loader
 │   ├── /plugins/                # Custom webpack plugin
 │   ├── /webpack/                # webpack config files

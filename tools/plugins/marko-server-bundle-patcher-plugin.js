@@ -2,8 +2,6 @@
  * Created by JP on 2017/3/20.
  */
 
-'use strict';
-
 import ConcatSource from 'webpack-sources/lib/ConcatSource'
 
 function MarkoServerBundlePatcherPlugin() {}

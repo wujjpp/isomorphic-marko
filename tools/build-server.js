@@ -4,7 +4,7 @@
 
 import webpack from 'webpack'
 import chalk from 'chalk'
-import {getPublicPath, logger, getEnv} from './lib/utils'
+import {getPublicPath, logger, getEnv} from './libs/utils'
 
 import config from './webpack/server.build'
 

@@ -13,7 +13,7 @@ import buildClient from './build-client'
 import buildServer from './build-server'
 import {
   getEnv
-} from './lib/utils'
+} from './libs/utils'
 
 async function build() {
   const env = getEnv()

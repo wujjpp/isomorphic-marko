@@ -8,10 +8,10 @@ import {
   copyFile,
   makeDir,
   cleanDir
-} from './lib/fs'
+} from './libs/fs'
 import {
   logger
-} from './lib/utils'
+} from './libs/utils'
 
 async function watch({
   dest

@@ -4,7 +4,7 @@
  * Thanks rmarscher
  */
 
-import VirtualStats from '../lib/virtual-stats'
+import VirtualStats from '../libs/virtual-stats'
 
 export default class VirtualModulePlugin {
   constructor(options) {

@@ -6,7 +6,7 @@ import webpack from 'webpack'
 import chalk from 'chalk'
 import config from './webpack/client.build'
 
-import {getPublicPath, logger, getEnv} from './lib/utils'
+import {getPublicPath, logger, getEnv} from './libs/utils'
 
 async function build(env) {
   env = env || getEnv()

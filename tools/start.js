@@ -13,7 +13,7 @@ import {
   getEnv,
   getPublicPath,
   logger
-} from './lib/utils'
+} from './libs/utils'
 
 import run from './run'
 import clean from './clean'

@@ -13,7 +13,7 @@ export default Object.assign({}, sharedClientConfig, {
   entry: {
     "home": './src/routes/home/client.js',
     "test": './src/routes/test/client.js',
-  },  
+  },
 
   output: {
     publicPath: '/',
@@ -156,4 +156,4 @@ export default Object.assign({}, sharedClientConfig, {
       }
     })
   ],
-};
+})

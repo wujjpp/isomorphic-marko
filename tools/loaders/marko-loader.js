@@ -5,13 +5,13 @@
 import compiler from 'marko/compiler'
 import {
   logger
-} from '../lib/utils'
+} from '../libs/utils'
 
 // for way 1
 // import fs from 'fs'
 
 // for way 2
-import VirtualStats from '../lib/virtual-stats'
+import VirtualStats from '../libs/virtual-stats'
 
 function patchPath(path) { //for windows platform
   return path.replace(/\\/g, '\\\\')
