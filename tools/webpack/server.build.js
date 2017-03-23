@@ -6,6 +6,8 @@ import webpack from 'webpack'
 import path from 'path'
 import serverSharedConfig from './server.shared'
 import MarkoServerBundlePatcherPlugin from '../plugins/marko-server-bundle-patcher-plugin'
+import marked from "marked"
+const renderer = new marked.Renderer()
 
 export default Object.assign({}, serverSharedConfig, {
   devtool: 'source-map',
@@ -53,6 +55,20 @@ export default Object.assign({}, serverSharedConfig, {
             emitFile: false
           }
         }]
+      },
+      {
+        test: /\.md$/,
+        use: [{
+            loader: "html-loader"
+          },
+          {
+            loader: "markdown-loader",
+            options: {
+              pedantic: true,
+              renderer
+            }
+          }
+        ]
       }
     ]
   },
