@@ -66,7 +66,7 @@ $ npm run build -- prod
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
 ## Regist client entry in entry-settings.js
-The client entry registering file, you should register all client entries in this file for compiler,for improving build performance, you can disable any client entry built by set it's include to false
+**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler,for improving build performance, you can disable any client entry built by set it's include to false
 
 ## Analyse webpack stats
 After built, run the following command to launch "Analyse web", then choose the stats that you want to analysis
