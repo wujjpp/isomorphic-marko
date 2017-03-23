@@ -35,6 +35,11 @@ $ npm start
 $ npm run build
 ```
 
+### Run in dist
+```shell
+$ npm run start:dist
+```
+
 ### About CDN
 Sometimes, we should host our static files(js,css,image and etc), in this case you should edit `/tools/config.js`,
 for example: if our cdn root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
