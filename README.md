@@ -59,14 +59,32 @@ const config = {
 
 export default Object.assign({}, shared, config)
 ```
-then use the following command to build, after built, upload the `/build/public` folder to CDN,  thats all.
+then use the following command for building, after built, upload the `/build/public` folder to CDN,  thats all.
 ```shell
 $ npm run build -- prod
 ```
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
 ## Regist client entry in entry-settings.js
-**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler,for improving build performance, you can disable any client entry built by set it's include to false
+**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` atribute to false
+
+___entry-settings.js___
+```
+export default {
+  // Home page
+  home: {
+    src: './src/routes/home/client.js',
+    include: true
+  },
+
+  // Test page
+  test: {
+    src: './src/routes/test/client.js',
+    include: false
+  }
+}
+```
+NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js` to `home[-xxxxxxxx].js`, and dont compile `./src/routes/test/client.js` in development", anyway, all files will be compiled in `build` mode
 
 ## Analyse webpack stats
 After built, run the following command to launch "Analyse web", then choose the stats that you want to analysis
