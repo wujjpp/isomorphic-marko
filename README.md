@@ -10,7 +10,7 @@ following the best practices. A solid starting point for both professionals
 and newcomers to the industry.
 
 ## Features
-- [Marko](http://markojs.com/)
+- [Marko 4](http://markojs.com/)
 - [Webpack 2](https://webpack.js.org/)
 - [Babel 6](https://babeljs.io/)
 - Support client live reload
