@@ -25,11 +25,21 @@ export default Object.assign({}, serverSharedConfig, {
         use: ['null-loader']
       },
       {
-        test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        test: /\.(ico|gif|png|jpg|jpeg)$/i,
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[path][name]-[hash:8].[ext]',
+            name: '[name]-[hash:8].[ext]',
+            emitFile: false
+          }
+        }]
+      },
+      {
+        test: /\.(webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash:8].[ext]',
             emitFile: false
           }
         }]
@@ -39,7 +49,7 @@ export default Object.assign({}, serverSharedConfig, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'font/[name]-[hash:8].[ext]',
+            name: '[name]-[hash:8].[ext]',
             emitFile: false
           }
         }]

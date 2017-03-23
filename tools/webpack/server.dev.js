@@ -34,7 +34,18 @@ export default Object.assign({}, serverSharedConfig, {
       },
 
       {
-        test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        test: /\.(ico|gif|png|jpg|jpeg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            emitFile: false
+          }
+        }]
+      },
+
+      {
+        test: /\.(webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
         use: [{
           loader: 'file-loader',
           options: {
@@ -49,7 +60,7 @@ export default Object.assign({}, serverSharedConfig, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'font/[name].[ext]',
+            name: '[path][name].[ext]',
             emitFile: false
           }
         }]
@@ -98,10 +109,10 @@ export default Object.assign({}, serverSharedConfig, {
         //generate assets from router settings
         return JSON.stringify({
           "test": {
-            "js": "http://localhost:3000/test/script.js"
+            "js": "http://localhost:3000/test.js"
           },
           "home": {
-            "js": "http://localhost:3000/home/script.js"
+            "js": "http://localhost:3000/home.js"
           }
         })
       }

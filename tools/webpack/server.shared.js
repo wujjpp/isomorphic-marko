@@ -27,6 +27,6 @@ export default {
 
   stats: {
     colors: true,
-    warnings: false
+    warnings: true
   }
 }

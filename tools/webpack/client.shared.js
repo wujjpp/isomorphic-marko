@@ -1,16 +1,16 @@
 export default {
-    target: 'web',
+  target: 'web',
 
-    resolve: {
-      extensions: ['.js', '.marko', '.json']
-    },
+  resolve: {
+    extensions: ['.js', '.marko', '.json']
+  },
 
-    resolveLoader: {
-      modules: ['tools/loaders', 'node_modules'],
-    },
-    
-    stats: {
-      colors: true,
-      warnings: false
-    }
+  resolveLoader: {
+    modules: ['tools/loaders', 'node_modules'],
+  },
+
+  stats: {
+    colors: true,
+    warnings: true
+  }
 }

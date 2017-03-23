@@ -24,7 +24,7 @@ export default Object.assign({}, sharedClientConfig, {
 
   output: {
     publicPath: '/',
-    filename: `[name]/script.js`
+    filename: `[name].js`
   },
 
   module: {
@@ -118,7 +118,17 @@ export default Object.assign({}, sharedClientConfig, {
       },
 
       {
-        test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        test: /\.(ico|gif|png|jpg|jpeg|webp)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]'
+          }
+        }]
+      },
+
+      {
+        test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)$/i,
         use: [{
           loader: 'file-loader',
           options: {
@@ -132,7 +142,7 @@ export default Object.assign({}, sharedClientConfig, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'font/[name].[ext]'
+            name: '[path][name].[ext]'
           }
         }]
       }

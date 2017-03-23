@@ -18,7 +18,7 @@ export default Object.assign({}, sharedClientConfig, {
   output: {
     publicPath: '/',
     path: path.join(process.cwd(), config.dist, 'public'),
-    filename: `[name]/script.[hash:8].js`
+    filename: `[name].[hash:8].js`
   },
 
   module: {
@@ -100,11 +100,21 @@ export default Object.assign({}, sharedClientConfig, {
       },
 
       {
-        test: /\.(ico|gif|png|jpg|jpeg|webp|mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        test: /\.(ico|gif|png|jpg|jpeg|webp)$/i,
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[path][name]-[hash:8].[ext]'
+            name: '[name]-[hash:8].[ext]',
+          }
+        }]
+      },
+
+      {
+        test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash:8].[ext]',
           }
         }]
       },
@@ -114,7 +124,7 @@ export default Object.assign({}, sharedClientConfig, {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'font/[name]-[hash:8].[ext]'
+            name: '[name]-[hash:8].[ext]'
           }
         }]
       }
@@ -145,7 +155,7 @@ export default Object.assign({}, sharedClientConfig, {
     }),
 
     new ExtractTextPlugin({
-      filename: `[name]/style.[hash:8].css`,
+      filename: `[name].[hash:8].css`,
       allChunks: true
     }),
     new webpack.optimize.UglifyJsPlugin({
