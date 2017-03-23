@@ -3,13 +3,13 @@
  */
 
 import webpack from 'webpack'
-import AssetsPlugin from 'assets-webpack-plugin'
 import path from 'path'
 import config from '../config'
+import sharedClientConfig from './client.shared'
 
-export default {
-  target: 'web',
+export default Object.assign({}, sharedClientConfig, {
   devtool: 'eval-source-map',
+
   entry: {
     "home": [
       './src/routes/home/client.js',
@@ -20,14 +20,6 @@ export default {
       './src/routes/test/client.js',
       'webpack-hot-middleware/client?reload=false', //reload only on css change, other changing use browser-sync reload trigger
     ]
-  },
-
-  resolve: {
-    extensions: ['.js', '.marko', '.json']
-  },
-
-  resolveLoader: {
-    modules: ['tools/loaders', 'node_modules'],
   },
 
   output: {
@@ -146,6 +138,7 @@ export default {
       }
     ]
   },
+
   plugins: [
     new webpack.DefinePlugin({
       '__BROWSER__': true,
@@ -163,16 +156,6 @@ export default {
     }),
 
     new webpack.HotModuleReplacementPlugin(),
-
-    new AssetsPlugin({
-      filename: 'assets.json',
-      prettyPrint: true
-    }),
     new webpack.NoEmitOnErrorsPlugin()
-  ],
-
-  stats: {
-    colors: true,
-    warnings: false
-  }
-};
+  ]
+})

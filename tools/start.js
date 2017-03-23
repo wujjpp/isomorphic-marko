@@ -18,7 +18,7 @@ import {
 import run from './run'
 import clean from './clean'
 import watch from './watch'
-import copyPublic from './copy-public'
+import {copyPublic} from './copy'
 import config from './config'
 import devClientConfig from './webpack/client.dev'
 import devServerConfig from './webpack/server.dev'
@@ -26,9 +26,7 @@ import devServerConfig from './webpack/server.dev'
 async function start() {
   let env = getEnv()
   await run(clean)
-  await run(copyPublic, {
-    dest: config.dist
-  });
+  await run(copyPublic);
 
   devClientConfig.output.publicPath = devServerConfig.output.publicPath = getPublicPath('dev')
 

@@ -7,21 +7,13 @@ import AssetsPlugin from 'assets-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import path from 'path'
 import config from '../config'
+import sharedClientConfig from './client.shared'
 
-export default {
-  target: 'web',
+export default Object.assign({}, sharedClientConfig, {
   entry: {
     "home": './src/routes/home/client.js',
     "test": './src/routes/test/client.js',
-  },
-
-  resolve: {
-    extensions: ['.js', '.marko', '.json']
-  },
-
-  resolveLoader: {
-    modules: ['tools/loaders', 'node_modules'],
-  },
+  },  
 
   output: {
     publicPath: '/',
@@ -140,6 +132,7 @@ export default {
     }),
 
     new AssetsPlugin({
+      path: path.join(process.cwd(), 'src'),
       filename: 'assets.json',
       prettyPrint: true
     }),
@@ -163,9 +156,4 @@ export default {
       }
     })
   ],
-
-  stats: {
-    colors: true,
-    warnings: false
-  }
 };

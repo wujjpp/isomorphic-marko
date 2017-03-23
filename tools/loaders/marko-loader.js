@@ -11,7 +11,7 @@ import {
 // import fs from 'fs'
 
 // for way 2
-import VirtualStats from './libs/virtual-stats'
+import VirtualStats from '../lib/virtual-stats'
 
 function patchPath(path) { //for windows platform
   return path.replace(/\\/g, '\\\\')
@@ -33,24 +33,8 @@ export default function(source) {
         //fs.writeFileSync(dependency.virtualPath, dependency.code, 'utf8')
 
         //way 2: add virtual file to compiler, then require
-        let now = new Date().toString()
-        let options = {
-          dev: 8675309,
-          nlink: 1,
-          uid: 501,
-          gid: 20,
-          rdev: 0,
-          blksize: 4096,
-          ino: 44700000,
-          mode: 33188,
-          size: dependency.code.length,
-          atime: now,
-          mtime: now,
-          ctime: now,
-          birthtime: now,
-        }
-
-        this._compiler.inputFileSystem._statStorage.data[dependency.virtualPath] = [null, new VirtualStats(options)]
+        var stats = VirtualStats.create(dependency.code)
+        this._compiler.inputFileSystem._statStorage.data[dependency.virtualPath] = [null, stats]
         this._compiler.inputFileSystem._readFileStorage.data[dependency.virtualPath] = [null, dependency.code]
 
         //add reuqire() in compiled file

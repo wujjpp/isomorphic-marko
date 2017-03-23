@@ -91,4 +91,24 @@ export default class VirtualStats {
   isSocket() {
     return this._checkModeProperty(constants.S_IFSOCK);
   }
+
+  static create(content) {
+    let now = new Date().toString()
+    let options = {
+      dev: 8675309,
+      nlink: 1,
+      uid: 501,
+      gid: 20,
+      rdev: 0,
+      blksize: 4096,
+      ino: 44700000,
+      mode: 33188,
+      size: content.length,
+      atime: now,
+      mtime: now,
+      ctime: now,
+      birthtime: now,
+    }
+    return new VirtualStats(options);
+  }
 }

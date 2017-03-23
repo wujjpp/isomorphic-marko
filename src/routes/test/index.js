@@ -1,5 +1,5 @@
 import template from './layout.marko'
-import assets from '../../../assets'
+import assets from '../../assets-loader'
 
 export default function(req, res) {
 
