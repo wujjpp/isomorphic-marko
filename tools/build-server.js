@@ -4,23 +4,33 @@
 
 import webpack from 'webpack'
 import chalk from 'chalk'
-import {getPublicPath, logger, getEnv} from './libs/utils'
+import config from './config'
+import webpackConfig from './webpack/server.build'
 
-import config from './webpack/server.build'
+import {
+  getPublicPath,
+  logger,
+  getEnv
+} from './libs/utils'
+
+import {
+  writeFile
+} from './libs/fs'
 
 async function build(env) {
 
   env = env || getEnv()
-  config.output.publicPath = (env === 'dev' ? '/' : getPublicPath(env))
+  webpackConfig.output.publicPath = (env === 'dev' ? '/' : getPublicPath(env))
 
-  logger.chalk(`${chalk.blue('Server public path: ')}${config.output.publicPath}`)
+  logger.chalk(`${chalk.blue('Server public path: ')}${webpackConfig.output.publicPath}`)
 
   return new Promise((resolve, reject) => {
-    webpack(config, (err, stats) => {
+    webpack(webpackConfig, (err, stats) => {
       if (err) {
         reject(err)
       } else {
         console.log(stats.toString(config.stats))
+        writeFile(`${config.dist}/webpack-server-stats.json`, JSON.stringify(stats.toJson()))
         resolve()
       }
     })

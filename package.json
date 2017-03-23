@@ -7,9 +7,8 @@
     "start": "cross-env NODE_ENV=development babel-node ./tools/run start",
     "start:dist": "node ./build/server.js",
     "clean": "babel-node ./tools/run clean",
-    "build:client": "cross-env NODE_ENV=production babel-node ./tools/run build-client",
-    "build:server": "cross-env NODE_ENV=production babel-node ./tools/run build-server",
     "build": "cross-env NODE_ENV=production babel-node ./tools/run build",
+    "analyse": "babel-node ./tools/analyse",
     "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js"
   },
   "author": "",
@@ -45,6 +44,7 @@
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
     "null-loader": "^0.1.1",
+    "opn": "^4.0.2",
     "postcss-loader": "^1.3.3",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
