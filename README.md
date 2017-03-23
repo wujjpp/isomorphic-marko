@@ -91,6 +91,41 @@ export default {
 ```
 NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js` to `home[-xxxxxxxx].js`, and dont compile `./src/routes/test/client.js` in development", anyway, all files will be compiled in `build` mode
 
+## About complie enviroment
+We defined 2 parameters for identity complie enviroment
+
+___/tools/webpack/client.build.js___
+```
+...
+plugins: [
+  new webpack.DefinePlugin({
+    '__BROWSER__': true,
+    '__DEV__': false
+  }),
+  ...
+]  
+...
+```
+You can use this 2 options in your code for condition compiling,
+
+For example: In `/src/routes/test/app-main/component.js`, we use `__BROWSER__` to tell compiler `jquery.easypiechart` and `toastr` only built for BROWSER, actually it is useless and cannot be used in node enviroment.
+```
+if (__BROWSER__) {
+  require('easy-pie-chart/dist/jquery.easypiechart')
+  require('toastr/toastr.scss')
+  var toastr = require('toastr')
+}
+
+export default class Test {
+  onMount() {
+    $('.chart').easyPieChart({
+      easing: 'easeOutBounce',
+      onStep: function(from, to, percent) {
+        $(this.el).find('.percent').text(Math.round(percent));
+      }
+    });
+```
+
 ## Analyse webpack stats
 After built, run the following command to launch "Analyse web", then choose the stats that you want to analysis
 ```shell

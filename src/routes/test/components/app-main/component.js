@@ -5,7 +5,7 @@ if (__BROWSER__) {
   var toastr = require('toastr')
 }
 
-export default class Home {
+export default class Test {
   onMount() {
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
