@@ -89,7 +89,7 @@ export default {
   }
 }
 ```
-NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js` to `home[-xxxxxxxx].js`, and dont compile `./src/routes/test/client.js` in development", anyway, all files will be compiled in `build` mode
+NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js`  and dont compile `./src/routes/test/client.js` in development mode", anyway, all files will be compiled in `build` mode
 
 ## About complie enviroment
 We defined 2 parameters for identity complie enviroment
