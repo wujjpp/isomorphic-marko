@@ -29,7 +29,7 @@ async function build(env) {
       if (err) {
         reject(err)
       } else {
-        console.log(stats.toString(config.stats))
+        console.log(stats.toString(webpackConfig.stats))
         writeFile(`${config.dist}/webpack-server-stats.json`, JSON.stringify(stats.toJson()))
         resolve()
       }

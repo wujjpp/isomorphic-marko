@@ -17,8 +17,7 @@ export default Object.assign({}, sharedClientConfig, {
   },
 
   module: {
-
-    loaders: [{
+    rules: [{
         test: /\.js$/i,
         use: ['babel-loader']
       },

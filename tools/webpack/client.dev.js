@@ -9,14 +9,14 @@ import sharedClientConfig from './client.shared'
 
 export default Object.assign({}, sharedClientConfig, {
   devtool: 'eval-source-map',
-  
+
   output: {
     publicPath: '/',
     filename: `[name].js`
   },
 
   module: {
-    loaders: [{
+    rules: [{
         test: /\.js$/i,
         use: [{
           loader: 'babel-loader',
@@ -39,8 +39,6 @@ export default Object.assign({}, sharedClientConfig, {
           {
             loader: 'css-loader',
             options: {
-              // because of url(), user cannot use sourceMap in css
-              // detailed info please refer: https://github.com/webpack-contrib/style-loader
               sourceMap: true
             }
           },
