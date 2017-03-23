@@ -65,6 +65,12 @@ $ npm run build -- prod
 ```
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
+## Analyse built files
+After built, run the following command to launch "Analyse web"
+```shell
+$ npm run analyse
+```
+
 ## Directory Layout
 ```
 .
