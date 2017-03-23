@@ -11,7 +11,7 @@ and newcomers to the industry.
 
 ## Features
 - [Marko](http://markojs.com/)
-- [Webpack2](https://webpack.js.org/)
+- [Webpack 2](https://webpack.js.org/)
 - [Babel 6](https://babeljs.io/)
 - Support client live reload
 - Supports server auto compile and restart
