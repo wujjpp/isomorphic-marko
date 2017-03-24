@@ -169,7 +169,8 @@ $ npm run analyse
 │   ├── /build.js                # Scripts for build client and server
 │   ├── /clean.js                # Cleans up for the output (build) folder
 │   ├── /config.js               # Build config file
-│   ├── /post.config.js          # Configuration for transforming styles with PostCSS plugins
+│   ├── /copy.js                 # Copy package.json, public folder and assets.json
+│   ├── /post.config.js          # Configuration for transforming styles with PostCSS
 │   ├── /run.js                  # Helper function for running build automation tasks
 │   └── /start.js                # Launches the development web server with "live reload"
 └── package.json                 # The list of 3rd party libraries and utilities
