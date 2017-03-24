@@ -8,7 +8,7 @@ import config from '../config'
 import sharedClientConfig from './client.shared'
 
 export default Object.assign({}, sharedClientConfig, {
-  devtool: 'eval-source-map',
+  //devtool: 'eval-source-map',
 
   output: {
     publicPath: '/',
