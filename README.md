@@ -127,10 +127,20 @@ export default class Test {
 ```
 
 ## Analyse webpack stats
-After built, run the following command to launch "Analyse web", then choose the stats that you want to analysis
+We have integrated analyse tools for analysing bundled file, after run `npm run build`, try to type the following command in your terminal.
+
+```shell
+$ npm run analyse:client
+```
+
+```shell
+$ npm run analyse:server
+```
+
 ```shell
 $ npm run analyse
 ```
+
 
 ## Directory Layout
 ```

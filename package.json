@@ -8,9 +8,9 @@
     "start:dist": "node ./build/server.js",
     "clean": "babel-node ./tools/run clean",
     "build": "cross-env NODE_ENV=production babel-node ./tools/run build",
-    "build:client": "cross-env NODE_ENV=production babel-node ./tools/run build-client",
-    "build:server": "cross-env NODE_ENV=production babel-node ./tools/run build-server",
     "analyse": "babel-node ./tools/analyse",
+    "analyse:client": "webpack-bundle-analyzer build/webpack-client-stats.json build/public",
+    "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",    
     "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js",
     "doc": "md2html README.md > src/routes/home/doc.marko"
   },
@@ -59,6 +59,7 @@
     "style-loader": "^0.14.1",
     "toastr": "^2.1.2",
     "webpack": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1",
     "webpack-sources": "^0.2.0"
