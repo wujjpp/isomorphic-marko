@@ -32,7 +32,12 @@ async function build(env) {
   //prepare config for webpack server and client config
   _.forEach(entryKeys, (key) => {
     let entry = entrySettings[key]
-    clientEntry[key] = entry.src
+    clientEntry[key] = [
+      //'babel-polyfill',  //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
+      'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
+      'core-js/es6/object', // for fixing object.assign is not defined in IE.
+      entry.src
+    ]
   })
 
   webpackConfig.entry = clientEntry
