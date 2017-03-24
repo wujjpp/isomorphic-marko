@@ -10,9 +10,8 @@
     "build": "cross-env NODE_ENV=production babel-node ./tools/run build",
     "analyse": "babel-node ./tools/analyse",
     "analyse:client": "webpack-bundle-analyzer build/webpack-client-stats.json build/public",
-    "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",    
-    "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js",
-    "doc": "md2html README.md > src/routes/home/doc.marko"
+    "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",
+    "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js"
   },
   "author": "",
   "license": "ISC",

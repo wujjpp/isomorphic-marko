@@ -152,6 +152,12 @@ export default Object.assign({}, sharedClientConfig, {
       filename: `[name].[hash:8].css`,
       allChunks: true
     }),
+
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: "common",
+    //   filename: "common.[hash:8].js"
+    // }),
+
     new webpack.optimize.UglifyJsPlugin({
       comments: false,
       compress: {
