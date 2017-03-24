@@ -127,7 +127,7 @@ export default class Test {
 ```
 
 ## Analyse webpack stats
-We have integrated analyse tools for analysing bundled file, after run `npm run build`, try to type the following command in your terminal.
+We have integrated tools for analysing bundled file, after run `npm run build`, try to type the following command in your terminal.
 
 ```shell
 $ npm run analyse:client
