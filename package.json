@@ -13,8 +13,28 @@
     "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",
     "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wujjpp/marko-starter-kit.git"
+  },
+  "keywords": [
+    "marko",
+    "starter Kit",
+    "universal-web",
+    "webpack",
+    "express",
+    "babel",
+    "es6",
+    "template engine"
+  ],
+  "author": "Wu Jian Ping <wujjpp@hotmail.com>",
+  "maintainers": [
+    "Wu Jian Ping <wujjpp@hotmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wujjpp/marko-starter-kit/issues"
+  },
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.2",
