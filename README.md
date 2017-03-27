@@ -147,23 +147,27 @@ $ npm run analyse
 .
 ├── /public/                     # Static files which are copied into the /build/public folder
 ├── /src/                        # The source code of the application
-│   ├── /components/             # top level marko components
-│   ├── /layouts/                # layout marko
-│   ├── /routes/                 # routes or pages
-│   │   ├── /home/               # page
-│   │   │   ├── /components      # page level compoment
-│   │   │   ├── /images          # page level images
-│   │   │   ├── client.js        # entry of client script
-│   │   │   ├── index.js         # router for server side
-│   │   │   └── layout.marko     # page template marko
+│   ├── /components/             # Top level marko components
+│   ├── /core/                   # Core module or utility library
+│   ├── /layouts/                # Layout marko
+│   ├── /routes/                 # Routes or pages
+│   │   ├── /home/               # Example home page
+│   │   │   ├── /components      # Page level compoment
+│   │   │   ├── /images          # Page level images
+│   │   │   ├── client.js        # Entry of client script
+│   │   │   ├── index.js         # Router for server side
+│   │   │   └── layout.marko     # Page template marko
 │   │   └── /xxxx/               # xxxx page    
-│   └── /styles/                 # global stylesheets
+│   ├── /styles/                 # Global stylesheets
+│   ├── /vendor/                 # Modified third-party library
+│   ├── /assets-loader.js        # Loader for loading assets.json
+│   └── /server.js               # Express server app
 ├── /tests/                      # Unit and end-to-end tests
 ├── /tools/                      # Build automation scripts and utilities
 │   ├── /libs/                   # Library for build system
 │   ├── /loaders/                # Custom webpack loader
 │   ├── /plugins/                # Custom webpack plugin
-│   ├── /webpack/                # webpack config files
+│   ├── /webpack/                # Webpack config files
 │   ├── /build-client.js         # Scripts for build client app
 │   ├── /build-server.js         # Scripts for build server app
 │   ├── /build.js                # Scripts for build client and server
@@ -172,7 +176,8 @@ $ npm run analyse
 │   ├── /copy.js                 # Copy package.json, public folder and assets.json
 │   ├── /post.config.js          # Configuration for transforming styles with PostCSS
 │   ├── /run.js                  # Helper function for running build automation tasks
-│   └── /start.js                # Launches the development web server with "live reload"
+│   ├── /start.js                # Launches the development web server with "live reload"
+│   └── /watch.js                # watch public folder, if changed copy files to dist/public folder
 └── package.json                 # The list of 3rd party libraries and utilities
 └── entry-settings.js            # Configure client entry for built
 ```

@@ -7,11 +7,6 @@ if (__BROWSER__) {
 
 export default class Test {
   onMount() {
-    toastr.options.closeButton = true
-    toastr.options.timeOut = 300000
-    toastr.options.extendedTimeOut = 300000
-
-
     //init easy pie chart
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
