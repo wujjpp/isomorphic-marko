@@ -1,4 +1,4 @@
-//import only in browser enviroment
+ //import only in browser enviroment
 if (__BROWSER__) {
   require('../../../../styles/toastr.scss')
   var toastr = require('toastr')
@@ -15,7 +15,8 @@ export default class Test {
       }
     })
     //update chart value
-    $('.chart').data('easyPieChart').update(this.state.percent)
+    this.chart = $('.chart').data('easyPieChart');
+    this.chart.update(this.state.percent)
   }
 
   onCreate(input, out) {
@@ -46,8 +47,8 @@ export default class Test {
   }
 
   updateChart() {
-    var chart = $('.chart').data('easyPieChart')
+    //var chart = $('.chart').data('easyPieChart')
     this.state.percent = Math.random() * 200 - 100
-    chart.update(this.state.percent)
+    this.chart.update(this.state.percent)
   }
 }

@@ -159,7 +159,7 @@ $ npm run analyse
 │   │   │   └── layout.marko     # Page template marko
 │   │   └── /xxxx/               # xxxx page    
 │   ├── /styles/                 # Global stylesheets
-│   ├── /vendor/                 # Modified third-party library
+│   ├── /vendor/                 # Customised third-party library
 │   ├── /assets-loader.js        # Loader for loading assets.json
 │   └── /server.js               # Express server app
 ├── /tests/                      # Unit and end-to-end tests

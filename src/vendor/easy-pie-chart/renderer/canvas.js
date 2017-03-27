@@ -11,7 +11,7 @@ var CanvasRenderer = function(el, options) {
   if (!canvas || canvas.length === 0) {
     canvas = document.createElement('canvas');
     el.appendChild(canvas);
-  }else{
+  } else {
     canvas = canvas[0];
   }
 
