@@ -1,0 +1,16 @@
+@import "~toastr/toastr.scss";
+
+#toast-container {
+  > :hover {
+    box-shadow: 0 0 12px #000;
+  }
+
+  > div {
+    border-radius: 0;
+  }
+
+  &.toast-bottom-full-width > div,
+  &.toast-top-full-width > div {
+    width: 100%;
+  }
+}

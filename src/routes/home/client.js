@@ -1,5 +1,5 @@
 import 'bootstrap-sass/assets/javascripts/bootstrap.min'
-import '../../styles/bootstrap/bootstrap.scss'
+import '../../styles/global.scss'
 import 'markdown-loader/example/markdown.css'
 
 import './layout.marko'

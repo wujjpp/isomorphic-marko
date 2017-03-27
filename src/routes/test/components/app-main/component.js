@@ -1,12 +1,17 @@
 //import only in browser enviroment
 if (__BROWSER__) {
-  require('toastr/toastr.scss')
+  require('../../../../styles/toastr.scss')
   var toastr = require('toastr')
   require('../../../../vendor/easy-pie-chart')
 }
 
 export default class Test {
   onMount() {
+    toastr.options.closeButton = true
+    toastr.options.timeOut = 300000
+    toastr.options.extendedTimeOut = 300000
+
+
     //init easy pie chart
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
@@ -41,7 +46,7 @@ export default class Test {
     })
   }
 
-  showToastr(){
+  showToastr() {
     toastr.success('Have fun storming the castle!', 'Miracle Max Says')
   }
 
