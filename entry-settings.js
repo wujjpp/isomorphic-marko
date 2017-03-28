@@ -20,5 +20,10 @@ export default {
   test: {
     src: './src/routes/test/client.js',
     include: true
-  }  
+  },
+
+  mixin: {
+    src: './src/routes/mixin/client.js',
+    include: true
+  }
 }
