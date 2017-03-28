@@ -8,18 +8,15 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import cp from 'child_process'
 import browserSync from 'browser-sync'
 import _ from 'lodash'
-
 import {
   format,
   getEnv,
   getPublicPath,
   logger
 } from './libs/utils'
-
 import {
   copyPublic
 } from './copy'
-
 import run from './run'
 import clean from './clean'
 import watch from './watch'

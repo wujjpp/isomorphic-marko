@@ -33,7 +33,7 @@ export default class VirtualStats {
    * @return {boolean} Property matches mode.
    */
   _checkModeProperty(property) {
-    return ((this.mode & constants.S_IFMT) === property);
+    return ((this.mode & constants.S_IFMT) === property)
   }
 
 
@@ -41,7 +41,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a directory.
    */
   isDirectory() {
-    return this._checkModeProperty(constants.S_IFDIR);
+    return this._checkModeProperty(constants.S_IFDIR)
   }
 
 
@@ -49,7 +49,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a regular file.
    */
   isFile() {
-    return this._checkModeProperty(constants.S_IFREG);
+    return this._checkModeProperty(constants.S_IFREG)
   }
 
 
@@ -57,7 +57,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a block device.
    */
   isBlockDevice() {
-    return this._checkModeProperty(constants.S_IFBLK);
+    return this._checkModeProperty(constants.S_IFBLK)
   }
 
 
@@ -65,7 +65,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a character device.
    */
   isCharacterDevice() {
-    return this._checkModeProperty(constants.S_IFCHR);
+    return this._checkModeProperty(constants.S_IFCHR)
   }
 
 
@@ -73,7 +73,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a symbolic link.
    */
   isSymbolicLink() {
-    return this._checkModeProperty(constants.S_IFLNK);
+    return this._checkModeProperty(constants.S_IFLNK)
   }
 
 
@@ -81,7 +81,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a named pipe.
    */
   isFIFO() {
-    return this._checkModeProperty(constants.S_IFIFO);
+    return this._checkModeProperty(constants.S_IFIFO)
   }
 
 
@@ -89,7 +89,7 @@ export default class VirtualStats {
    * @return {Boolean} Is a socket.
    */
   isSocket() {
-    return this._checkModeProperty(constants.S_IFSOCK);
+    return this._checkModeProperty(constants.S_IFSOCK)
   }
 
   static create(content) {
@@ -109,6 +109,6 @@ export default class VirtualStats {
       ctime: now,
       birthtime: now,
     }
-    return new VirtualStats(options);
+    return new VirtualStats(options)
   }
 }

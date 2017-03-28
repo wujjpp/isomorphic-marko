@@ -8,13 +8,11 @@ import config from './config'
 import webpackConfig from './webpack/client.build'
 import entrySettings from '../entry-settings'
 import _ from 'lodash'
-
 import {
   getPublicPath,
   logger,
   getEnv
 } from './libs/utils'
-
 import {
   writeFile
 } from './libs/fs'

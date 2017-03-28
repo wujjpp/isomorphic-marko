@@ -6,13 +6,11 @@ import webpack from 'webpack'
 import chalk from 'chalk'
 import config from './config'
 import webpackConfig from './webpack/server.build'
-
 import {
   getPublicPath,
   logger,
   getEnv
 } from './libs/utils'
-
 import {
   writeFile
 } from './libs/fs'

@@ -20,8 +20,8 @@ app.use(function(req, res, next) {
     name: 'foo',
     email: 'xxx@xxx.com'
   }
-  req.context = context;
-  next();
+  req.context = context
+  next()
 })
 
 app.get('/', require('./routes/home'))

@@ -19,10 +19,10 @@ export const logger = {
   info: (msg) => {
     console.log(`${format(new Date())}${chalk.blue(msg)}`)
   },
-  debug:(msg) =>{
+  debug: (msg) => {
     console.log(`${format(new Date())}${chalk.yellow(msg)}`)
   },
-  chalk:(msg) =>{
+  chalk: (msg) => {
     console.log(`${format(new Date())}${msg}`)
   }
 }
@@ -30,7 +30,7 @@ export const logger = {
 export const getEnv = () => {
   let env = 'dev'
   if (process.argv.length >= 3) {
-    let args = Array.slice(process.argv, 2)    
+    let args = Array.slice(process.argv, 2)
     if (args.includes('prod')) {
       env = 'prod'
     }

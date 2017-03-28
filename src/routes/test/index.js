@@ -5,6 +5,6 @@ export default function(req, res) {
   let context = req.context.assign({
     assets: assets.test,
     initCount: 10
-  });
-  res.marko(template, context);
-};
+  })
+  res.marko(template, context)
+}

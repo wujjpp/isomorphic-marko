@@ -53,7 +53,7 @@ export default function(source) {
   } else { //node and others
     var source = compiler.compile(source, this.resourcePath, {
       writeToDisk: false
-    });
+    })
     return source
   }
 }
