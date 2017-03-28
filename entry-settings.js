@@ -20,8 +20,5 @@ export default {
   test: {
     src: './src/routes/test/client.js',
     include: true
-  }
-
-
-  
+  }  
 }
