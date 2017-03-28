@@ -2,7 +2,7 @@
 if (__BROWSER__) {
   require('../../../../styles/toastr.scss')
   var toastr = require('toastr')
-  require('../../../../vendor/easy-pie-chart')
+  require('easy-pie-chart/dist/jquery.easypiechart')
 }
 
 export default class Test {
@@ -11,7 +11,7 @@ export default class Test {
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
       onStep: function(from, to, percent) {
-        $(this.el).find('.percent').text(Math.round(percent))
+        //$(this.el).find('.percent').text(Math.round(percent))
       }
     })
     //update chart value
@@ -24,11 +24,15 @@ export default class Test {
     this.state = {
       percent: Math.round(Math.random() * 200 - 100)
     }
+
+    console.log(this.state)
   }
 
   onRender() {}
 
-  onUpdate() {}
+  onUpdate() {
+    console.log('update')
+  }
 
   inc() {
     this.input = Object.assign({}, this.input, {
