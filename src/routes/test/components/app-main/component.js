@@ -1,50 +1,54 @@
- //import only in browser enviroment
- if (__BROWSER__) {
-   require('../../../../styles/toastr.scss')
-   var toastr = require('toastr')
-   require('easy-pie-chart/dist/jquery.easypiechart')
- }
+/**
+  * Created by JP on 2017/3/20.
+ */
 
- export default class Test {
-   onMount() {
-     $('.chart').easyPieChart({
-       easing: 'easeOutBounce',
-       onStep: function(from, to, percent) {
-         $(this.el).find('.percent').text(Math.round(percent))
-       }
-     })
-     this.chart = $('.chart').data('easyPieChart');
-     this.chart.update(this.state.percent)
-   }
+//import only in browser enviroment
+if (__BROWSER__) {
+  require('../../../../styles/toastr.scss')
+  var toastr = require('toastr')
+  require('easy-pie-chart/dist/jquery.easypiechart')
+}
 
-   onCreate(input, out) {
-     this.state = {
-       percent: Math.round(Math.random() * 200 - 100)
-     }
-   }
+export default class Test {
+  onMount() {
+    $('.chart').easyPieChart({
+      easing: 'easeOutBounce',
+      onStep: function(from, to, percent) {
+        $(this.el).find('.percent').text(Math.round(percent))
+      }
+    })
+    this.chart = $('.chart').data('easyPieChart');
+    this.chart.update(this.state.percent)
+  }
 
-   onRender() {}
+  onCreate(input, out) {
+    this.state = {
+      percent: Math.round(Math.random() * 200 - 100)
+    }
+  }
 
-   onUpdate() {}
+  onRender() {}
 
-   inc() {
-     this.input = Object.assign({}, this.input, {
-       initCount: this.input.initCount + 1
-     })
-   }
+  onUpdate() {}
 
-   dec() {
-     this.input = Object.assign({}, this.input, {
-       initCount: this.input.initCount - 1
-     })
-   }
+  inc() {
+    this.input = Object.assign({}, this.input, {
+      initCount: this.input.initCount + 1
+    })
+  }
 
-   showToastr() {
-     toastr.success('Have fun storming the castle!', 'Miracle Max Says')
-   }
+  dec() {
+    this.input = Object.assign({}, this.input, {
+      initCount: this.input.initCount - 1
+    })
+  }
 
-   updateChart() {
-     this.state.percent = Math.random() * 200 - 100
-     this.chart.update(this.state.percent)
-   }
- }
+  showToastr() {
+    toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+  }
+
+  updateChart() {
+    this.state.percent = Math.random() * 200 - 100
+    this.chart.update(this.state.percent)
+  }
+}

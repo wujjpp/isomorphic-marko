@@ -1,3 +1,7 @@
+/**
+  * Created by JP on 2017/3/20.
+ */
+
 import 'jquery'
 import 'bootstrap-sass/assets/javascripts/bootstrap.min'
 import '../../styles/global.scss'

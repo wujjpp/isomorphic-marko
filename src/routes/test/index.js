@@ -1,3 +1,7 @@
+/**
+  * Created by JP on 2017/3/20.
+ */
+
 import template from './layout.marko'
 import assets from '../../assets-loader'
 
