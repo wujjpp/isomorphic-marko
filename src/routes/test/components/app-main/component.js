@@ -7,31 +7,25 @@ if (__BROWSER__) {
 
 export default class Test {
   onMount() {
-    //init easy pie chart
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
       onStep: function(from, to, percent) {
-        //$(this.el).find('.percent').text(Math.round(percent))
+        $(this.el).find('.percent').text(Math.round(percent))
       }
     })
-    //update chart value
     this.chart = $('.chart').data('easyPieChart');
     this.chart.update(this.state.percent)
   }
 
-  onCreate(input, out) {
-    //initial state
+  onCreate(input, out) {    
     this.state = {
       percent: Math.round(Math.random() * 200 - 100)
     }
-
-    console.log(this.state)
   }
 
   onRender() {}
 
   onUpdate() {
-    console.log('update')
   }
 
   inc() {
@@ -51,7 +45,6 @@ export default class Test {
   }
 
   updateChart() {
-    //var chart = $('.chart').data('easyPieChart')
     this.state.percent = Math.random() * 200 - 100
     this.chart.update(this.state.percent)
   }
