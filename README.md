@@ -45,7 +45,7 @@ Sometimes, we should host our static files(js,css,image and etc), in this case y
 for example: if our cdn root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
 
 __/tools/config.js__
-```
+```javascript
 const shared = {
   dist: 'build',
   frontPort: 3000, //front-end port
@@ -74,7 +74,7 @@ NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 **IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` atribute to false
 
 ___entry-settings.js___
-```
+```javascript
 export default {
   // Home page
   home: {
@@ -95,7 +95,7 @@ NOTE: The above settings command build system that "Compile the `./src/routes/ho
 We defined 2 parameters for identity complie enviroment
 
 ___/tools/webpack/client.build.js___
-```
+```javascript
 ...
 plugins: [
   new webpack.DefinePlugin({
@@ -109,7 +109,7 @@ plugins: [
 You can use this 2 options in your code for condition compiling,
 
 For example: In `/src/routes/test/app-main/component.js`, we use `__BROWSER__` to tell compiler `jquery.easypiechart` and `toastr` only built for BROWSER, actually it is useless and cannot be used in node enviroment.
-```
+```javascript
 if (__BROWSER__) {
   require('easy-pie-chart/dist/jquery.easypiechart')
   require('toastr/toastr.scss')
