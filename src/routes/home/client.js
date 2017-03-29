@@ -1,5 +1,5 @@
 /**
-  * Created by JP on 2017/3/20.
+  * Created by Wu Jian Ping on 2017/3/20.
  */
 
 import 'bootstrap-sass/assets/javascripts/bootstrap.min'
