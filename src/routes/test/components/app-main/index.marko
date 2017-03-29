@@ -50,8 +50,8 @@ style.scss {
       <app-counter(input.initCount)/>
       <if(!input.hideBtn)>
         <div class="btn-group" role="group" aria-label="...">
-          <button onClick('inc') type="button" class="btn btn-default">+</button>
-          <button onClick('dec') type="button" class="btn btn-default">-</button>
+          <button on-click('inc') type="button" class="btn btn-default">+</button>
+          <button on-click('dec') type="button" class="btn btn-default">-</button>
         </div>
       </if>
     </div>
@@ -60,7 +60,7 @@ style.scss {
       <span class="chart" no-update>
         <span class="percent">${Math.round(state.percent)}</span>
       </span>
-      <span class="btn btn-default" onClick('updateChart')>Update chart</span>
+      <span class="btn btn-default" on-click('updateChart')>Update chart</span>
     </div>
     <div class="col-md-12">
       <h2>5. Test icon font</h2>
@@ -70,7 +70,12 @@ style.scss {
     <div class="col-md-12">
       <h2>6. Test plain javascript library</h2>
       <a class="btn btn-default" href="javascript:;" role="button"
-        onClick('showToastr')>Click me to show toastr</a>
+        on-click('showToastr')>Click me to show toastr</a>
+    </div>
+    <div class="col-md-12">
+      <h2>7. Test mixin</h2>
+      <a on-click('gotoTest') href="/">Home Page Link</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a on-click('gotoMixin') href="/test">Test Page Link</a>
     </div>
   </div>
 </div>

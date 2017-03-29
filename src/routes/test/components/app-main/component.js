@@ -2,6 +2,11 @@
  * Created by JP on 2017/3/20.
  */
 
+ import {
+   Mixins,
+   HistoryMixin
+ } from '../../../../core/mixins'
+
 //import only in browser enviroment
 if (__BROWSER__) {
   require('../../../../styles/toastr.scss')
@@ -9,7 +14,7 @@ if (__BROWSER__) {
   require('easy-pie-chart/dist/jquery.easypiechart')
 }
 
-export default class Test {
+class TestComponent {
   onMount() {
     $('.chart').easyPieChart({
       easing: 'easeOutBounce',
@@ -51,4 +56,22 @@ export default class Test {
     this.state.percent = Math.random() * 200 - 100
     this.chart.update(this.state.percent)
   }
+
+  gotoTest() {
+    event.preventDefault()
+    event.stopPropagation()
+    console.log('this.history was enhanced by HistoryMixin')
+    console.log(this.history)
+    this.history.push('/')
+  }
+
+  gotoMixin() {
+    event.preventDefault()
+    event.stopPropagation()
+    console.log('this.history was enhanced by HistoryMixin')
+    console.log(this.history)
+    this.history.push('mixin')
+  }
 }
+
+export default Mixins(HistoryMixin)(TestComponent)
