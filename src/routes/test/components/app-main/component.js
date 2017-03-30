@@ -29,7 +29,7 @@ class TestComponent {
   onCreate(input, out) {
     this.state = {
       percent: Math.round(Math.random() * 200 - 100),
-      cnt: 100
+      content: 'marko-starter-kit'
     }
   }
 
@@ -51,11 +51,11 @@ class TestComponent {
   dec() {
     this.input = Object.assign({}, this.input, {
       initCount: this.input.initCount - 1
-    })    
+    })
   }
 
   handleInput(e) {
-    this.state.cnt = e.target.value
+    this.state.content = e.target.value
   }
 
   showToastr() {

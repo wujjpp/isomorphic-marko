@@ -59,8 +59,14 @@ style.scss {
       <h2>
         4. Two way data-binding <small>Try to type any character in the following textbox</small>
       </h2>
-      <input value=state.cnt type="text" on-input("handleInput")/>
-      <span>${state.cnt}</span>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4"><input class="form-control" value=state.content type="text" on-input("handleInput")/></div>
+          <div class="col-md-8">
+            <p class="form-control-static"><b>${state.content}</b></p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-12">
       <h2>5. Test integrate jquery plugin</h2>
