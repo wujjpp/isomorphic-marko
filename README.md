@@ -141,6 +141,8 @@ $ npm run analyse:server
 $ npm run analyse
 ```
 
+## About Browsersync
+Navigate to [http://localhost:3001](http://localhost:3001) to open Browsersync control panel
 
 ## Directory Layout
 ```
