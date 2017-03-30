@@ -73,15 +73,13 @@ class TestComponent {
   gotoTest(e) {
     e.preventDefault()
     e.stopPropagation()
-    console.log('this.history was enhanced by HistoryMixin')
     console.log(this.history)
     this.history.push('/')
   }
 
   gotoMixin(e) {
     e.preventDefault()
-    e.stopPropagation()
-    console.log('this.history was enhanced by HistoryMixin')
+    e.stopPropagation()    
     console.log(this.history)
     this.history.push('mixin')
   }
