@@ -2,10 +2,10 @@
  * Created by Wu Jian Ping on 2017/3/20.
  */
 
- import {
-   Mixins,
-   HistoryMixin
- } from '../../../../core/mixins'
+import {
+  Mixins,
+  HistoryMixin
+} from '../../../../core/mixins'
 
 //import only in browser enviroment
 if (__BROWSER__) {
@@ -28,24 +28,37 @@ class TestComponent {
 
   onCreate(input, out) {
     this.state = {
-      percent: Math.round(Math.random() * 200 - 100)
+      percent: Math.round(Math.random() * 200 - 100),
+      cnt: 100
     }
   }
 
-  onRender() {}
+  onRender() {
+    console.log('onRender called');
+  }
 
-  onUpdate() {}
+  onUpdate() {
+    console.log('onUpdate called');
+
+  }
 
   inc() {
     this.input = Object.assign({}, this.input, {
       initCount: this.input.initCount + 1
     })
+
+    this.state.cnt = this.state.cnt + 1
   }
 
   dec() {
     this.input = Object.assign({}, this.input, {
       initCount: this.input.initCount - 1
     })
+    this.state.cnt = this.state.cnt - 1
+  }
+
+  handleInput(e) {
+    this.state.cnt = e.target.value
   }
 
   showToastr() {
@@ -65,9 +78,9 @@ class TestComponent {
     this.history.push('/')
   }
 
-  gotoMixin() {
-    event.preventDefault()
-    event.stopPropagation()
+  gotoMixin(e) {
+    e.preventDefault()
+    e.stopPropagation()
     console.log('this.history was enhanced by HistoryMixin')
     console.log(this.history)
     this.history.push('mixin')

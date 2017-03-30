@@ -56,6 +56,12 @@ style.scss {
       </if>
     </div>
     <div class="col-md-12">
+      <h2>4. Two way data-binding</h2>
+      <h3>Try to type any character in the following textbox </h3>
+      <input value=state.cnt type="text" on-input("handleInput")/>
+      <span>${state.cnt}</span>
+    </div>
+    <div class="col-md-12">
       <h2>4. Test integrate jquery plugin</h2>
       <span class="chart" no-update>
         <span class="percent">${Math.round(state.percent)}</span>
