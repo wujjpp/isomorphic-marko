@@ -164,6 +164,7 @@ $ npm run analyse
 │   └── /server.js               # Express server app
 ├── /tests/                      # Unit and end-to-end tests
 ├── /tools/                      # Build automation scripts and utilities
+│   ├── /analyse/                # analyse tools for webpack stats
 │   ├── /libs/                   # Library for build system
 │   ├── /loaders/                # Custom webpack loader
 │   ├── /plugins/                # Custom webpack plugin
