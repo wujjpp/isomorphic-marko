@@ -48,9 +48,9 @@ async function start() {
           "js": `http://localhost:${config.frontPort}/${key}.js`
         }
         clientEntry[key] = [
-          //'babel-polyfill',  //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
-          'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
-          'core-js/es6/object', // for fixing object.assign is not defined in IE.
+          'babel-polyfill',  //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
+          //'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
+          //'core-js/es6/object', // for fixing object.assign is not defined in IE.
           entry.src,
           'webpack-hot-middleware/client?reload=false'
         ]
