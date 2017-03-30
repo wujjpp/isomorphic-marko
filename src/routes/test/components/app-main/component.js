@@ -70,9 +70,9 @@ class TestComponent {
     this.chart.update(this.state.percent)
   }
 
-  gotoTest() {
-    event.preventDefault()
-    event.stopPropagation()
+  gotoTest(e) {
+    e.preventDefault()
+    e.stopPropagation()
     console.log('this.history was enhanced by HistoryMixin')
     console.log(this.history)
     this.history.push('/')
