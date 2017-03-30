@@ -46,15 +46,12 @@ class TestComponent {
     this.input = Object.assign({}, this.input, {
       initCount: this.input.initCount + 1
     })
-
-    this.state.cnt = this.state.cnt + 1
   }
 
   dec() {
     this.input = Object.assign({}, this.input, {
       initCount: this.input.initCount - 1
-    })
-    this.state.cnt = this.state.cnt - 1
+    })    
   }
 
   handleInput(e) {
@@ -79,7 +76,7 @@ class TestComponent {
 
   gotoMixin(e) {
     e.preventDefault()
-    e.stopPropagation()    
+    e.stopPropagation()
     console.log(this.history)
     this.history.push('mixin')
   }
