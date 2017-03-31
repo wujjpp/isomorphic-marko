@@ -71,7 +71,7 @@ $ npm run build -- prod
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
 ## Regist client entry in entry-settings.js
-**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` atribute to false
+**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` attribute to false
 
 ___entry-settings.js___
 ```javascript
@@ -89,7 +89,7 @@ export default {
   }
 }
 ```
-NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js` to `home[-xxxxxxxx].js`, and dont compile `./src/routes/test/client.js` in development", anyway, all files will be compiled in `build` mode
+NOTE: The above settings command build system that "Compile the `./src/routes/home/client.js` to `home[-xxxxxxxx].js` and dont compile `./src/routes/test/client.js` during developing". anyway, all entries will be compiled in `build` mode
 
 ## About complie enviroment
 We defined 2 parameters for identity complie enviroment
