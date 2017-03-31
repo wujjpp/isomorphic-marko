@@ -9,6 +9,8 @@ and [Browsersync](http://www.browsersync.io/). Helping you to stay productive
 following the best practices. A solid starting point for both professionals
 and newcomers to the industry.
 
+[![Build Status](https://travis-ci.org/wujjpp/marko-starter-kit.svg?branch=master)](https://travis-ci.org/wujjpp/marko-starter-kit)
+
 ## Features
 - [Marko 4](http://markojs.com/)
 - [Webpack 2](https://webpack.js.org/)
