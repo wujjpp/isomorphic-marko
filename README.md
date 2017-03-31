@@ -10,7 +10,7 @@ following the best practices. A solid starting point for both professionals
 and newcomers to the industry.
 
 [![Build Status](https://travis-ci.org/wujjpp/marko-starter-kit.svg?branch=master)](https://travis-ci.org/wujjpp/marko-starter-kit)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/marko-starter-kit/Lobby)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/marko-starter-kit/Lobby)
 
 ## Features
 - [Marko 4](http://markojs.com/)
