@@ -71,7 +71,7 @@ $ npm run build -- prod
 NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 
 ## Regist client entry in entry-settings.js
-**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` attribute to false
+**IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` attribute to `false`
 
 ___entry-settings.js___
 ```javascript
