@@ -22,11 +22,11 @@ class TestComponent {
         $(this.el).find('.percent').text(Math.round(percent))
       }
     })
-    this.chart = $('.chart').data('easyPieChart');
+    this.chart = $('.chart').data('easyPieChart')
     this.chart.update(this.state.percent)
   }
 
-  onCreate(input, out) {
+  onCreate() {
     this.state = {
       percent: Math.round(Math.random() * 200 - 100),
       content: 'marko-starter-kit'
@@ -34,12 +34,11 @@ class TestComponent {
   }
 
   onRender() {
-    console.log('onRender called');
+    //console.log('onRender called')
   }
 
   onUpdate() {
-    console.log('onUpdate called');
-
+    //console.log('onUpdate called')
   }
 
   inc() {
@@ -70,14 +69,14 @@ class TestComponent {
   gotoTest(e) {
     e.preventDefault()
     e.stopPropagation()
-    console.log(this.history)
+    //console.log(this.history)
     this.history.push('/')
   }
 
   gotoMixin(e) {
     e.preventDefault()
     e.stopPropagation()
-    console.log(this.history)
+    //console.log(this.history)
     this.history.push('mixin')
   }
 }

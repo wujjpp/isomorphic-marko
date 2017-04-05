@@ -11,7 +11,8 @@
     "analyse": "babel-node ./tools/analyse",
     "analyse:client": "webpack-bundle-analyzer build/webpack-client-stats.json build/public",
     "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",
-    "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js"
+    "test": "mocha \"src/**/*.test.js\" --require babel-register --require tests/setup.js",
+    "eslint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,10 @@
     "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "easy-pie-chart": "^2.1.7",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.2.0",
     "exports-loader": "^0.6.4",
     "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.0",

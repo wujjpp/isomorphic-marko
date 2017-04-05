@@ -31,5 +31,5 @@ app.listen(PORT, function(err) {
   if (err) {
     throw err
   }
-  console.log(`Listening at http://localhost:${PORT}/`)
+  console.log(`Listening at http://localhost:${PORT}/`) // eslint-disable-line
 })

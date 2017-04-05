@@ -1,1 +1,2 @@
 *.marko linguist-language=JavaScript
+*.js text eol=lf
