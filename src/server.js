@@ -25,6 +25,7 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', require('./routes/home'))
+app.get('/home', require('./routes/home'))
 app.get('/test', require('./routes/test'))
 
 app.listen(PORT, function(err) {

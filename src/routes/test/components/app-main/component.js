@@ -69,15 +69,15 @@ class TestComponent {
   gotoTest(e) {
     e.preventDefault()
     e.stopPropagation()
+    this.history.navigate('/test', { a: 1, b: 2 })
     //console.log(this.history)
-    this.history.push('/')
   }
 
   gotoMixin(e) {
     e.preventDefault()
     e.stopPropagation()
+    this.history.navigate('/home', { a: 3, b: 4 })
     //console.log(this.history)
-    this.history.push('mixin')
   }
 }
 
