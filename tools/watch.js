@@ -2,16 +2,10 @@
  * Created by Wu Jian Ping on 2017/3/20.
  */
 
-import path from 'path';
+import path from 'path'
 import chokidar from 'chokidar'
-import {
-  copyFile,
-  makeDir,
-  cleanDir
-} from './libs/fs'
-import {
-  logger
-} from './libs/utils'
+import { copyFile, makeDir, cleanDir } from './libs/fs'
+import { logger } from './libs/utils'
 
 async function watch({ dest }) {
   const watcher = chokidar.watch([

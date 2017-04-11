@@ -29,17 +29,17 @@ async function copyPublic() {
   await copyDir('public', `${config.dist}/public`)
 }
 
-export var copyAssets = {
+export var copyAssets = { // eslint-disable-line
   name: 'copy generated assets.json',
   func: copyAssets
 }
 
-export var copyPkg = {
+export var copyPkg = { // eslint-disable-line
   name: 'generate package.json',
   func: copyPkg
 }
 
-export var copyPublic = {
+export var copyPublic = { // eslint-disable-line
   name: 'copy static assets in public folder',
   func: copyPublic
 }
