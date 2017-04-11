@@ -9,6 +9,7 @@ import path from 'path'
 import config from '../config'
 import sharedClientConfig from './client.shared'
 
+/* eslint-disable */
 export default Object.assign({}, sharedClientConfig, {
   output: {
     publicPath: '/',
@@ -167,3 +168,5 @@ export default Object.assign({}, sharedClientConfig, {
     })
   ],
 })
+
+/* eslint-enable */

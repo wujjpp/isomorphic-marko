@@ -18,6 +18,7 @@ async function watch({ dest }) {
     const start = new Date()
     const src = path.relative('./', filePath)
     const dist = path.join(`${dest}/`, src.startsWith('src') ? path.relative('src', src) : src)
+    /* eslint-disable */
     switch (event) {
       case 'add':
       case 'change':
@@ -34,6 +35,7 @@ async function watch({ dest }) {
       default:
         return
     }
+    /* eslint-enable */
     const end = new Date()
     const time = end.getTime() - start.getTime()
     logger.info(`${event} '${dist}' after ${time} ms`)

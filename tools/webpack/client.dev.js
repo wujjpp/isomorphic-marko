@@ -3,10 +3,9 @@
  */
 
 import webpack from 'webpack'
-import path from 'path'
-import config from '../config'
 import sharedClientConfig from './client.shared'
 
+/* eslint-disable */
 export default Object.assign({}, sharedClientConfig, {
   //devtool: 'eval-source-map',
 
@@ -155,3 +154,5 @@ export default Object.assign({}, sharedClientConfig, {
     new webpack.NoEmitOnErrorsPlugin()
   ]
 })
+
+/* eslint-enable */
