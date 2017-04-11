@@ -21,9 +21,9 @@ export default class VirtualStats {
   constructor(config) {
     for (const key in config) {
       if (!config.hasOwnProperty(key)) {
-        continue;
+        continue
       }
-      this[key] = config[key];
+      this[key] = config[key]
     }
   }
 

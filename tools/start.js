@@ -8,15 +8,8 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import cp from 'child_process'
 import browserSync from 'browser-sync'
 import _ from 'lodash'
-import {
-  format,
-  getEnv,
-  getPublicPath,
-  logger
-} from './libs/utils'
-import {
-  copyPublic
-} from './copy'
+import { format, getPublicPath } from './libs/utils'
+import { copyPublic } from './copy'
 import run from './run'
 import clean from './clean'
 import watch from './watch'
@@ -27,9 +20,8 @@ import devServerConfig from './webpack/server.dev'
 import entrySettings from '../entry-settings'
 
 async function start() {
-  let env = getEnv()
   await run(clean)
-  await run(copyPublic);
+  await run(copyPublic)
 
   devClientConfig.output.publicPath = devServerConfig.output.publicPath = getPublicPath('dev')
 
@@ -42,13 +34,13 @@ async function start() {
 
     //prepare config for webpack server and client config
     _.forEach(entryKeys, (key) => {
-      let entry = entrySettings[key];
+      let entry = entrySettings[key]
       if (entry.include) {
         virtualAssets[key] = {
-          "js": `http://localhost:${config.frontPort}/${key}.js`
+          'js': `http://localhost:${config.frontPort}/${key}.js`
         }
         clientEntry[key] = [
-          'babel-polyfill',  //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
+          'babel-polyfill', //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
           //'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
           //'core-js/es6/object', // for fixing object.assign is not defined in IE.
           entry.src,
@@ -66,7 +58,7 @@ async function start() {
     )
 
     //setup client webpack config's entry
-    devClientConfig.entry = clientEntry;
+    devClientConfig.entry = clientEntry
 
     // init server and client compiler
     const serverCompiler = webpack(devServerConfig)
@@ -126,7 +118,7 @@ async function start() {
         silent: false
       })
 
-      server.stdout.on('data', onStdOut);
+      server.stdout.on('data', onStdOut)
       server.stderr.on('data', x => process.stderr.write(x))
     }
 
@@ -134,7 +126,7 @@ async function start() {
       aggregateTimeout: 200,
       poll: true
     }, function(err, stats) {
-      console.log(stats.toString(devServerConfig.stats))
+      console.log(stats.toString(devServerConfig.stats)) //eslint-disable-line
       handleServerBundleCompleted(stats)
     })
 

@@ -50,7 +50,7 @@ export default class VirtualModulePlugin {
     if (!compiler.resolvers.normal) {
       compiler.plugin('after-resolvers', () => {
         compiler.resolvers.normal.plugin('resolve', resolverPlugin)
-      });
+      })
     } else {
       compiler.resolvers.normal.plugin('resolve', resolverPlugin)
     }

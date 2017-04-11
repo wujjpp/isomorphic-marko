@@ -27,7 +27,7 @@ export default function(source) {
       writeToDisk: false
     })
 
-    let dependencies = compiled.dependencies.map((dependency, i) => {
+    let dependencies = compiled.dependencies.map((dependency) => {
       if (dependency.code) {
         //way 1: write file to dist, then require
         //fs.writeFileSync(dependency.virtualPath, dependency.code, 'utf8')
@@ -51,9 +51,8 @@ export default function(source) {
     })
     return dependencies.concat(compiled.code).join('\n')
   } else { //node and others
-    var source = compiler.compile(source, this.resourcePath, {
+    return compiler.compile(source, this.resourcePath, {
       writeToDisk: false
     })
-    return source
   }
 }

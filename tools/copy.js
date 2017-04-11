@@ -2,12 +2,7 @@
  * Created by Wu Jian Ping on 2017/3/23.
  */
 
-import {
-  makeDir,
-  copyDir,
-  copyFile,
-  writeFile
-} from './libs/fs'
+import { makeDir, copyDir, copyFile, writeFile } from './libs/fs'
 import pkg from '../package.json'
 import config from './config'
 

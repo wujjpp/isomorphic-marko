@@ -25,11 +25,11 @@ export const copyFile = (source, target) => new Promise((resolve, reject) => {
 
   function done(err) {
     if (!cbCalled) {
-      cbCalled = true;
+      cbCalled = true
       if (err) {
-        reject(err);
+        reject(err)
       } else {
-        resolve();
+        resolve()
       }
     }
   }
@@ -57,10 +57,10 @@ export const copyDir = async(source, target) => {
     dot: true
   })
   await Promise.all(dirs.map(async(dir) => {
-    const from = path.resolve(source, dir);
-    const to = path.resolve(target, dir);
-    await makeDir(path.dirname(to));
-    await copyFile(from, to);
+    const from = path.resolve(source, dir)
+    const to = path.resolve(target, dir)
+    await makeDir(path.dirname(to))
+    await copyFile(from, to)
   }))
 }
 

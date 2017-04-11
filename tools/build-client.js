@@ -8,15 +8,8 @@ import config from './config'
 import webpackConfig from './webpack/client.build'
 import entrySettings from '../entry-settings'
 import _ from 'lodash'
-import {
-  getPublicPath,
-  logger,
-  getEnv
-} from './libs/utils'
-import {
-  writeFile
-} from './libs/fs'
-
+import { getPublicPath, logger, getEnv } from './libs/utils'
+import { writeFile } from './libs/fs'
 
 async function build(env) {
   env = env || getEnv()
@@ -31,7 +24,7 @@ async function build(env) {
   _.forEach(entryKeys, (key) => {
     let entry = entrySettings[key]
     clientEntry[key] = [
-      'babel-polyfill',  //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
+      'babel-polyfill', //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
       //'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
       //'core-js/es6/object', // for fixing object.assign is not defined in IE.
       entry.src
@@ -45,7 +38,7 @@ async function build(env) {
       if (err) {
         reject(err)
       } else {
-        console.log(stats.toString(webpackConfig.stats))
+        console.log(stats.toString(webpackConfig.stats)) //eslint-disable-line
         writeFile(`${config.dist}/webpack-client-stats.json`, JSON.stringify(stats.toJson()))
         resolve()
       }

@@ -1,8 +1,8 @@
 /**
  * Created by Wu Jian Ping on 2017/3/20.
- */
+ **/
 
-import {logger} from './libs/utils'
+import { logger } from './libs/utils'
 
 function run(task, options) {
 
@@ -20,7 +20,7 @@ if (require.main === module && process.argv.length > 2) {
   delete require.cache[__filename]
   const task = require(`./${process.argv[2]}.js`)
   run(task).catch((err) => {
-    console.error(err.stack)
+    console.error(err.stack) // eslint-disable-line
     process.exit(1)
   })
 }
