@@ -31,6 +31,8 @@
   "globals": {
         "$": true,
         "__BROWSER__": true,
-        "__DEV__" : true
+        "__DEV__" : true,
+        "describe": true,
+        "it": true
     }
 }
