@@ -6,7 +6,7 @@ WORKDIR /usr/local/marko-starter-kit/
 
 # Install Node.js dependencies
 # For chinese user, please unmark the follow code for improving building performance
-# RUN npm config set registry=http://registry.npm.taobao.org
+RUN npm config set registry=http://registry.npm.taobao.org
 RUN npm install
 
 CMD [ "node", "server.js" ]
