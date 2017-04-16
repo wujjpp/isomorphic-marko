@@ -2,7 +2,7 @@
   * Created by Wu Jian Ping on 2017/3/20.
  */
 
-import template from './layout.marko'
+import template from './index.marko'
 import assets from '../../assets-loader'
 import readme from '../../../README.md'
 

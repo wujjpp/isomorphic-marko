@@ -89,7 +89,7 @@ async function start() {
 
       handleServerBundleCompleted = () => {
         startServer()
-        bs.reload()
+        setTimeout(()=>{bs.reload()}, 1000)
       }
     }
 
