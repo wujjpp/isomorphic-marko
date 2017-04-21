@@ -18,7 +18,7 @@ history.navigate = function(pathname, query, hash, state) {
   })
 }
 
-history.query = function(){
+history.query = function() {
   let query = {}
   return query
 }

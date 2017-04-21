@@ -7,7 +7,7 @@ import {
   HistoryMixin
 } from '../../../../core/mixins'
 
-//import only in browser enviroment
+// import only in browser enviroment
 if (__BROWSER__) {
   require('../../../../styles/toastr.scss')
   var toastr = require('toastr')
@@ -34,11 +34,11 @@ class TestComponent {
   }
 
   onRender() {
-    //console.log('onRender called')
+    // console.log('onRender called')
   }
 
   onUpdate() {
-    //console.log('onUpdate called')
+    // console.log('onUpdate called')
   }
 
   inc() {
@@ -70,14 +70,14 @@ class TestComponent {
     e.preventDefault()
     e.stopPropagation()
     this.history.navigate('/test', { a: 1, b: 2 })
-    //console.log(this.history)
+    // console.log(this.history)
   }
 
   gotoMixin(e) {
     e.preventDefault()
     e.stopPropagation()
     this.history.navigate('/home', { a: 3, b: 4 })
-    //console.log(this.history)
+    // console.log(this.history)
   }
 }
 

@@ -5,7 +5,7 @@
     "es6": true,
     "node": true
   },
-  "extends": "eslint:recommended",
+  "extends": "semistandard",
   "parserOptions": {
     "sourceType": "module"
   },
@@ -26,7 +26,11 @@
       1,
       "never"
     ],
-    "no-console": 1
+    "no-console": 1,
+    "space-before-function-paren": 0,
+    "no-multiple-empty-lines": [
+      "off"
+    ]
   },
   "globals": {
         "$": true,
