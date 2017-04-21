@@ -27,7 +27,14 @@ export default Object.assign({}, sharedClientConfig, {
 
       {
         test: /\.marko$/,
-        loader: 'marko-loader'
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: './.cache/babel-loader'
+          }
+        }, {
+          loader: 'marko-loader'
+        }]
       },
 
       {

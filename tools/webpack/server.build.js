@@ -21,7 +21,7 @@ export default Object.assign({}, serverSharedConfig, {
       },
       {
         test: /\.marko$/,
-        loader: 'marko-loader'
+        use: ['babel-loader', 'marko-loader']
       },
       {
         test: /\.(scss|less|css)$/i,
