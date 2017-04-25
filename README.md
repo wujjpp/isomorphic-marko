@@ -43,8 +43,8 @@ $ npm run start:dist
 ```
 
 #### About CDN
-Sometimes, we should host our static files(js,css,image and etc) in CDN, for this case you should edit `/tools/config.js`,
-for example: if our cdn root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
+Sometimes, we should host our static files(js,css,image and etc) in CDN, for this case you should change seetings in  `/tools/config.js`,
+for example: if our CDN root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
 
 __/tools/config.js__
 ```javascript
