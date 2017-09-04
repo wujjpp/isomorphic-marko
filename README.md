@@ -4,7 +4,7 @@ Marko Starter Kit is an opinionated boilerplate for web
 development built on top of [Node.js](https://nodejs.org/),
 [Express](http://expressjs.com/) and
 [Marko 4](http://markojs.com/), containing modern web development
-tools such as [Webpack 2](http://webpack.github.io/), [Babel 6](https://babeljs.io/)
+tools such as [Webpack 3](http://webpack.github.io/), [Babel 7](https://babeljs.io/)
 and [Browsersync](http://www.browsersync.io/). Helping you to stay productive
 following the best practices. A solid starting point for both professionals
 and newcomers to the industry.
@@ -13,8 +13,8 @@ and newcomers to the industry.
 
 ## Features
 - [Marko 4](http://markojs.com/)
-- [Webpack 2](https://webpack.js.org/)
-- [Babel 6](https://babeljs.io/)
+- [Webpack 3](https://webpack.js.org/)
+- [Babel 7](https://babeljs.io/)
 - Support client live reload
 - Supports server auto compile and restart
 - Support [less](http://lesscss.org/), [sass](https://sass-lang.com/)
@@ -46,25 +46,27 @@ $ npm run start:dist
 Sometimes, we should host our static files(js,css,image and etc) in CDN, for this case you should change seetings in  `/tools/config.js`,
 for example: if our CDN root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
 
-__/tools/config.js__
+__cdn_settings.js__
 ```javascript
-const shared = {
-  dist: 'build',
-  frontPort: 3000, //front-end port
-  backendPort: 9000 //backend-server port
-};
-
-const config = {
+export default {
   dev: {
-    publicPath: 'http://localhost:' + shared.frontPort + '/'
+    // publicPath: 'http://localhost:' + shared.frontPort + '/'
+    publicPath: '/'
+  },
+
+  sit: {
+    publicPath: '//sitcache.xxx.com/pcweb/'
+  },
+
+  uat: {
+    publicPath: '//uatcache.xxx.com/pcweb/'
   },
 
   prod: {
-    publicPath: '//cache.YourCDN.com/' //For CDN root url goes here, change the url to you CDN root
+    publicPath: '//cache.xxx.com/pcweb/'
   }
-};
+}
 
-export default Object.assign({}, shared, config)
 ```
 then use the following command for building, after built, upload the `/build/public` folder to CDN,  thats all.
 ```shell
