@@ -31,7 +31,7 @@ style.scss {
   <div class="row">
     <div class="col-md-12">
       <h1>
-        Marko4 + Webpack2 + Babel6 <small>Support ES6</small>
+        Marko4 + Webpack3 + Babel7 <small>Support ES6</small>
       </h1>
     </div>
     <div class="col-md-12">
@@ -61,9 +61,14 @@ style.scss {
       </h2>
       <div class="row">
         <div class="form-group">
-          <div class="col-md-4"><input class="form-control" value=state.content type="text" on-input("handleInput")/></div>
+          <div class="col-md-4">
+            <input class="form-control" value=state.content type="text"
+              on-input("handleInput")/>
+          </div>
           <div class="col-md-8">
-            <p class="form-control-static"><b>${state.content}</b></p>
+            <p class="form-control-static">
+              <b>${state.content}</b>
+            </p>
           </div>
         </div>
       </div>
