@@ -8,12 +8,12 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import cp from 'child_process'
 import browserSync from 'browser-sync'
 import _ from 'lodash'
-import { format, getPublicPath } from './libs/utils'
-import { copyPublic } from './copy'
+import { format, getPublicPath, createEnvDefinePlugin } from './libs/utils'
+import { copyPublic, copyEnvConfig, copyDevAssets } from './copy'
 import run from './run'
 import clean from './clean'
 import watch from './watch'
-import VirtualModulePlugin from './plugins/virtual-module-plugin'
+// import VirtualModulePlugin from './plugins/virtual-module-plugin'
 import config from './config'
 import devClientConfig from './webpack/client.dev'
 import devServerConfig from './webpack/server.dev'
@@ -22,43 +22,56 @@ import entrySettings from '../entry-settings'
 async function start() {
   await run(clean)
   await run(copyPublic)
+  await run(copyEnvConfig, 'dev')
 
   devClientConfig.output.publicPath = devServerConfig.output.publicPath = getPublicPath('dev')
 
-  await new Promise((resolve) => {
-
-    //load entry setting
+  await new Promise(async (resolve) => {
+    // load entry setting
     let entryKeys = _.keys(entrySettings)
     let virtualAssets = {}
     let clientEntry = {}
+    let watchOptions = {
+      aggregateTimeout: 200,
+      poll: true
+    }
 
-    //prepare config for webpack server and client config
+    // prepare config for webpack server and client config
     _.forEach(entryKeys, (key) => {
       let entry = entrySettings[key]
       if (entry.include) {
         virtualAssets[key] = {
-          'js': `http://localhost:${config.frontPort}/${key}.js`
+          // 'js': `http://localhost:${config.frontPort}/${key}.js`
+          'js': `/${key}.js`
         }
         clientEntry[key] = [
-          'babel-polyfill', //if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
-          //'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
-          //'core-js/es6/object', // for fixing object.assign is not defined in IE.
+          'babel-polyfill', // if we include bable-polyfill, it will made bundle file incress 96 KB, if not it will be crash in IE by Symbol not defined.
+          // 'core-js/es6/symbol', // fox fixing Symbol is not defined in IE
+          // 'core-js/es6/object', // for fixing object.assign is not defined in IE.
           entry.src,
           'webpack-hot-middleware/client?reload=false'
         ]
       }
     })
 
-    //attach virtual module plugin to webpack server config
-    devServerConfig.plugins.push(
-      new VirtualModulePlugin({
-        moduleName: 'src/assets.json',
-        contents: virtualAssets
-      })
-    )
+    await copyDevAssets.func(virtualAssets)
 
-    //setup client webpack config's entry
+    // attach virtual module plugin to webpack server config
+    // devServerConfig.plugins.push(
+    //   new VirtualModulePlugin({
+    //     moduleName: 'src/assets.json',
+    //     contents: virtualAssets
+    //   })
+    // )
+
+    // setup client webpack config's entry
     devClientConfig.entry = clientEntry
+
+    // setup client env config
+    devClientConfig.plugins.push(createEnvDefinePlugin('dev'))
+
+    // setup server env config
+    devServerConfig.plugins.push(createEnvDefinePlugin('dev'))
 
     // init server and client compiler
     const serverCompiler = webpack(devServerConfig)
@@ -66,7 +79,10 @@ async function start() {
 
     const wpDevMiddleware = webpackDevMiddleware(clientCompiler, {
       publicPath: devClientConfig.output.publicPath,
-      stats: devClientConfig.stats
+      stats: devClientConfig.stats,
+      // lazy: true,
+      noInfo: true
+      // watchOptions: { ...watchOptions }
     })
 
     const wpHotMiddleware = webpackHotMiddleware(clientCompiler)
@@ -82,14 +98,14 @@ async function start() {
           target: `http://localhost:${config.backendPort}`,
           middleware: [wpDevMiddleware, wpHotMiddleware],
           proxyOptions: {
-            xfwd: true,
-          },
+            xfwd: true
+          }
         }
       }, resolve)
 
       handleServerBundleCompleted = () => {
         startServer()
-        setTimeout(()=>{bs.reload()}, 1000)
+        setTimeout(() => { bs.reload() }, 1000)
       }
     }
 
@@ -123,10 +139,14 @@ async function start() {
     }
 
     serverCompiler.watch({
-      aggregateTimeout: 200,
-      poll: true
-    }, function(err, stats) {
-      console.log(stats.toString(devServerConfig.stats)) //eslint-disable-line
+      aggregateTimeout: watchOptions.aggregateTimeout,
+      poll: watchOptions.poll,
+      ignored: ['src/**/*.scss']
+    }, (err, stats) => {
+      if (err) {
+        console.error(err) // eslint-disable-line
+      }
+      console.log(stats.toString(devServerConfig.stats)) // eslint-disable-line
       handleServerBundleCompleted(stats)
     })
 

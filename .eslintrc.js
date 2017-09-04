@@ -1,42 +1,45 @@
 module.exports = {
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+  'parser': 'babel-eslint',
+  'env': {
+    'browser': true,
+    'es6': true,
+    'node': true
   },
-  "extends": "semistandard",
-  "parserOptions": {
-    "sourceType": "module"
+  'extends': 'semistandard',
+  'parserOptions': {
+    'sourceType': 'module'
   },
-  "rules": {
-    "indent": [
-      "error",
+  'rules': {
+    'indent': [
+      'error',
       2
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    "quotes": [
+    'quotes': [
       1,
-      "single"
+      'single'
     ],
-    "semi": [
+    'semi': [
       1,
-      "never"
+      'never'
     ],
-    "no-console": 1,
-    "space-before-function-paren": 0,
-    "no-multiple-empty-lines": [
-      "off"
+    'no-console': 1,
+    'space-before-function-paren': 0,
+    'no-multiple-empty-lines': [
+      'off'
     ]
   },
-  "globals": {
-    "$": true,
-    "__BROWSER__": true,
-    "__DEV__": true,
-    "describe": true,
-    "it": true
+  'globals': {
+    '$': true,
+    '__BROWSER__': true,
+    '__DEV__': true,
+    '__SIT__': true,
+    '__UAT__': true,
+    '__PROD__': true,
+    'describe': true,
+    'it': true
   }
 }

@@ -4,7 +4,7 @@
 
 import run from './run'
 import clean from './clean'
-import { copyPublic, copyPkg, copyAssets } from './copy'
+import { copyPublic, copyPkg, copyAssets, copyEnvConfig } from './copy'
 import buildClient from './build-client'
 import buildServer from './build-server'
 import { getEnv } from './libs/utils'
@@ -12,6 +12,7 @@ import { getEnv } from './libs/utils'
 async function build() {
   const env = getEnv()
   await run(clean)
+  await run(copyEnvConfig, env)
   await run(copyPublic)
   await run(copyPkg)
   await run(buildClient, env)

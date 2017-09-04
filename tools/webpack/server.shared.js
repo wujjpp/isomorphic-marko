@@ -16,17 +16,8 @@ export default {
     modules: ['tools/loaders', 'node_modules']
   },
 
-  resolve: {
-    extensions: ['.js', '.marko', '.json']
-  },
-
   node: {
     __filename: false,
     __dirname: false
-  },
-
-  stats: {
-    colors: true,
-    warnings: true
   }
 }

@@ -10,7 +10,9 @@ function clean() {
     cleanDir(config.dist, {
       nosort: true,
       dot: true
-    })
+    }),
+
+    cleanDir('.cache', { nosort: true, dot: true })
   ])
 }
 

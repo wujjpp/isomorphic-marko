@@ -107,7 +107,7 @@ export default class VirtualStats {
       atime: now,
       mtime: now,
       ctime: now,
-      birthtime: now,
+      birthtime: now
     }
     return new VirtualStats(options)
   }

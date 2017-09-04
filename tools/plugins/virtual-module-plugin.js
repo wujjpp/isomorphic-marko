@@ -26,24 +26,22 @@ export default class VirtualModulePlugin {
     }
     const stats = VirtualStats.create(contents)
 
-    function resolverPlugin(request, cb) {
+    function resolverPlugin(request, callback) {
       const fs = this.fileSystem
       if (typeof request === 'string') {
-        request = cb
-        cb = null
+        request = callback
+        callback = null
       }
 
       if (!modulePath) {
         modulePath = this.join(compiler.context, moduleName)
       }
-
-      if (!fs._readFileStorage.data[modulePath]) {
-        fs._statStorage.data[modulePath] = [null, stats]
-        fs._readFileStorage.data[modulePath] = [null, contents]
+      if (!fs._readFileStorage.data.has(modulePath)) {
+        fs._statStorage.data.set(modulePath, [null, stats])
+        fs._readFileStorage.data.set(modulePath, [null, contents])
       }
-
-      if (cb) {
-        cb()
+      if (callback) {
+        callback()
       }
     }
 
@@ -51,8 +49,6 @@ export default class VirtualModulePlugin {
       compiler.plugin('after-resolvers', () => {
         compiler.resolvers.normal.plugin('resolve', resolverPlugin)
       })
-    } else {
-      compiler.resolvers.normal.plugin('resolve', resolverPlugin)
     }
   }
 }

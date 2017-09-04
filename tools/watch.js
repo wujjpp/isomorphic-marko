@@ -9,7 +9,7 @@ import { logger } from './libs/utils'
 
 async function watch({ dest }) {
   const watcher = chokidar.watch([
-    'public/**/*',
+    'public/**/*'
   ], {
     ignoreInitial: true
   })
