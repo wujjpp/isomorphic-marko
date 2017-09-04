@@ -43,27 +43,26 @@ $ npm run start:dist
 ```
 
 #### About CDN
-Sometimes, we should host our static files(js,css,image and etc) in CDN, for this case you should change seetings in  `/tools/config.js`,
+Sometimes, we should host our static files(js,css,image and etc) in CDN, for this case you should change seetings in  `/cdn_config.js`,
 for example: if our CDN root is `http://cache.mycdn.com/`, change `//cache.YourCDN.com` to `//cache.mycdn.com`
 
-__cdn_settings.js__
+__/cdn_settings.js__
 ```javascript
 export default {
   dev: {
-    // publicPath: 'http://localhost:' + shared.frontPort + '/'
     publicPath: '/'
   },
 
   sit: {
-    publicPath: '//sitcache.xxx.com/pcweb/'
+    publicPath: '//sitcache.mycdn.com/'
   },
 
   uat: {
-    publicPath: '//uatcache.xxx.com/pcweb/'
+    publicPath: '//uatcache.mycdn.com/'
   },
 
   prod: {
-    publicPath: '//cache.xxx.com/pcweb/'
+    publicPath: '//cache.mycdn.com/'
   }
 }
 
@@ -77,7 +76,7 @@ NOTE: double dashes are required and there is a `blank` between `--` and `prod`
 ## Regist client entry in entry-settings.js
 **IMPORTANT** : The client entry registering file, you should register all client entries in this file for compiler, for improving build performance, you can disable any client entry built by set it's `include` attribute to `false`
 
-___entry-settings.js___
+___/entry-settings.js___
 ```javascript
 export default {
   // Home page

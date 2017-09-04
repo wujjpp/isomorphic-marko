@@ -4,7 +4,6 @@
 
 export default {
   dev: {
-    // publicPath: 'http://localhost:' + shared.frontPort + '/'
     publicPath: '/'
   },
 
