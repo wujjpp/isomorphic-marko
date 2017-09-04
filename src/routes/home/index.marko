@@ -1,14 +1,12 @@
 <include('../../layouts/default.marko')>
-  <@title>Home Page</@title>
+  <@tdk>
+    <app-tdk(input && input.tdk)/>
+  </@tdk>
   <@styles>
-    <if(input && input.assets && input.assets.css)>
-      <link rel="stylesheet" href="${input.assets.css}"/>
-    </if>
+    <app-styles(input)/>
   </@styles>
   <@scripts>
-    <if(input && input.assets && input.assets.js)>
-      <script src="${input.assets.js}"/>
-    </if>
+    <app-scripts(input)/>
   </@scripts>
   <@body>
     <app-nav(input.user)/>

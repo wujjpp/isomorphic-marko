@@ -146,8 +146,7 @@ export default Object.assign({}, sharedClientConfig, {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
-      filename: 'common.[hash:8].js',
-      minChunks: 10
+      filename: 'common.[hash:8].js'
     }),
 
     new AssetsPlugin({

@@ -28,9 +28,10 @@ app.get('/', require('./routes/home'))
 app.get('/home', require('./routes/home'))
 app.get('/test', require('./routes/test'))
 
+let logger = console
 app.listen(PORT, function(err) {
   if (err) {
     throw err
   }
-  console.log(`Listening at http://localhost:${PORT}/`) // eslint-disable-line
+  logger.log(`Listening at http://localhost:${PORT}/`) // eslint-disable-line
 })
