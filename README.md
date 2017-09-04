@@ -14,7 +14,7 @@ and newcomers to the industry.
 ## Features
 - [Marko 4](http://markojs.com/)
 - [Webpack 3](https://webpack.js.org/)
-- [Babel 7](https://babeljs.io/)
+- [Babel 6](https://babeljs.io/)
 - Support client live reload
 - Supports server auto compile and restart
 - Support [less](http://lesscss.org/), [sass](https://sass-lang.com/)
