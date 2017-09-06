@@ -45,7 +45,7 @@
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "markdown-loader": "^2.0.1",
-    "marko": "^4.4.27",
+    "marko": "^4.4.28",
     "source-map-support": "^0.4.17"
   },
   "devDependencies": {
