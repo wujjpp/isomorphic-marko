@@ -198,3 +198,5 @@ $ npm install
 ```
 
 Made with ♥ by Wu Jian Ping
+
+Feel free to contact me if you have any problem [830390@qq.com](mailto:830390@qq.com)
