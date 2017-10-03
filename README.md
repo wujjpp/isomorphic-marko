@@ -22,7 +22,7 @@ and newcomers to the industry.
 ## How to Install
 ```shell
 $ git clone https://github.com/wujjpp/isomorphic-marko.git
-$ cd marko-starter-kit
+$ cd isomorphic-marko
 $ npm install
 ```
 
