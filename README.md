@@ -1,6 +1,6 @@
-# Marko Starter Kit
+# isomorphic-marko
 
-Marko Starter Kit is an opinionated boilerplate for web
+Isomorphic Marko is an opinionated boilerplate for web
 development built on top of [Node.js](https://nodejs.org/),
 [Express](http://expressjs.com/) and
 [Marko 4](http://markojs.com/), containing modern web development
