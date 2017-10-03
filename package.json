@@ -4,12 +4,12 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development babel-node ./tools/run start",
+    "start": "cross-env NODE_ENV=development babel-node --max-old-space-size=7168 ./tools/run start",
     "start:dist": "node ./build/server.js",
     "clean": "babel-node ./tools/run clean",
-    "build": "cross-env NODE_ENV=production babel-node ./tools/run build",
-    "build:client": "cross-env NODE_ENV=production babel-node ./tools/run build-client",
-    "build:server": "cross-env NODE_ENV=production babel-node ./tools/run build-server",
+    "build": "cross-env NODE_ENV=production babel-node --max-old-space-size=7168 ./tools/run build",
+    "build:client": "cross-env NODE_ENV=production babel-node --max-old-space-size=7168 ./tools/run build-client",
+    "build:server": "cross-env NODE_ENV=production babel-node --max-old-space-size=7168 ./tools/run build-server",
     "analyse": "babel-node ./tools/analyse",
     "analyse:client": "webpack-bundle-analyzer build/webpack-client-stats.json build/public",
     "analyse:server": "webpack-bundle-analyzer build/webpack-server-stats.json",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wujjpp/marko-starter-kit.git"
+    "url": "https://github.com/wujjpp/isomorphic-marko.git"
   },
   "keywords": [
     "marko",
@@ -36,7 +36,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wujjpp/marko-starter-kit/issues"
+    "url": "https://github.com/wujjpp/isomorphic-marko/issues"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
