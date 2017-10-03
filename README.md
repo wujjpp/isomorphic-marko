@@ -111,7 +111,7 @@ plugins: [
 ```
 You can use this 2 options in your code for condition compiling,
 
-For example: In `/src/routes/test/app-main/component.js`, we use `__BROWSER__` to tell compiler `jquery.easypiechart` and `toastr` only built for BROWSER, actually it is useless and cannot be used in node enviroment.
+For example: In `/src/routes/test/app/component.js`, we use `__BROWSER__` to tell compiler `jquery.easypiechart` and `toastr` only built for BROWSER, actually it is useless and cannot be used in node enviroment.
 ```javascript
 if (__BROWSER__) {
   require('easy-pie-chart/dist/jquery.easypiechart')
