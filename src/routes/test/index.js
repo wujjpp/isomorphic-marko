@@ -1,5 +1,5 @@
 /**
-  * Created by Wu Jian Ping on 2017/3/20.
+ * Created by Wu Jian Ping on 2017/3/20.
  */
 
 import template from './index.marko'
@@ -14,9 +14,9 @@ export default function(req, res) {
 
   // init title, description and keywords
   context.tdk = {
-    title: 'this is test page',
-    description: 'test page\'s description',
-    keywords: 'test page\'s keywords'
+    title: 'This is test page',
+    description: 'This is test page\'s description',
+    keywords: 'This is test page\'s keywords'
   }
 
   // init data

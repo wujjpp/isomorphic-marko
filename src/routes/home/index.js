@@ -15,9 +15,9 @@ export default function(req, res) {
 
   // init title, description and keywords
   context.tdk = {
-    title: 'this is home page',
-    description: 'home page\'s description',
-    keywords: 'home page\'s keywords'
+    title: 'This is home page',
+    description: 'This is home page\'s description',
+    keywords: 'This is home page\'s keywords'
   }
 
   // init data
