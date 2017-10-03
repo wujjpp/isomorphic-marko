@@ -3,7 +3,7 @@ import config from '../config'
 
 export default {
   target: 'node',
-  entry: './src/server.js',
+  entry: ['babel-polyfill', './src/server.js'],
 
   output: {
     path: path.join(process.cwd(), config.dist),

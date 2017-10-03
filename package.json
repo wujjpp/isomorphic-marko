@@ -39,6 +39,7 @@
     "url": "https://github.com/wujjpp/marko-starter-kit/issues"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "compression": "^1.7.0",
     "express": "^4.15.4",
     "helmet": "^3.8.1",
@@ -54,7 +55,6 @@
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.24.0",
