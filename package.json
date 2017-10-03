@@ -1,5 +1,5 @@
 {
-  "name": "marko-starter-kit",
+  "name": "isomorphic-marko",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -51,7 +51,7 @@
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
     "babel-cli": "^6.24.0",
-    "babel-eslint": "^7.2.1",
+    "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-polyfill": "^6.23.0",
@@ -73,7 +73,7 @@
     "exports-loader": "^0.6.4",
     "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.4",
     "glob": "^7.1.1",
     "html-loader": "^0.5.1",
     "imports-loader": "^0.7.1",
