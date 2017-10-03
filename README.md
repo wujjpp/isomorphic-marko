@@ -184,8 +184,10 @@ Navigate to [http://localhost:3001](http://localhost:3001) to open Browsersync c
 │   ├── /run.js                  # Helper function for running build automation tasks
 │   ├── /start.js                # Launches the development web server with "live reload"
 │   └── /watch.js                # watch public folder, if changed copy files to dist/public folder
-└── package.json                 # The list of 3rd party libraries and utilities
-└── entry-settings.js            # Configure client entry for built
+├── package.json                 # The list of 3rd party libraries and utilities
+├── cdn-settings.js              # Configure CDN for each enviroment
+├── entry-settings.js            # Configure client entry for built
+└── port-settings.js             # Configure server port (browsersync and backend server)
 ```
 
 ## How to Update
