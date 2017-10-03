@@ -29,7 +29,7 @@ class TestComponent {
   onCreate() {
     this.state = {
       percent: Math.round(Math.random() * 200 - 100),
-      content: 'marko-starter-kit'
+      content: 'isomorphic-marko'
     }
   }
 
