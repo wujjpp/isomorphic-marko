@@ -2,10 +2,9 @@
  * Created by Wu Jian Ping on 2017/3/20.
  */
 
-import {
-  Mixins,
-  HistoryMixin
-} from '../../../../core/mixins'
+import { Mixins, HistoryMixin } from '../../../../core/mixins'
+
+import appDialog from '../app-dialog'
 
 // import only in browser enviroment
 if (__BROWSER__) {
@@ -78,6 +77,17 @@ class TestComponent {
     e.stopPropagation()
     this.history.navigate('/home', { a: 3, b: 4 })
     // console.log(this.history)
+  }
+
+  openDialog() {
+    appDialog
+      .render({})
+      .then(result => {
+        result
+          .appendTo(document.body)
+          .getComponent()
+          .show()
+      })
   }
 }
 
