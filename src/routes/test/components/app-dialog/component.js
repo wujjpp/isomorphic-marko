@@ -14,6 +14,8 @@ export default class Component {
   onMount() {
     this.dialog = $(this.el)
     this.dialog.on('hidden.bs.modal', () => {
+      // remove dialog by manual
+      this.dialog.remove()
       this.destroy()
     })
   }
