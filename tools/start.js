@@ -127,7 +127,7 @@ async function start() {
         server.kill('SIGTERM')
       }
 
-      server = cp.spawn('node', [`./${config.dist}/server`], {
+      server = cp.spawn('node', ['--inspect', `./${config.dist}/server`], {
         env: Object.assign({
           NODE_ENV: 'development'
         }, process.env),

@@ -12,6 +12,9 @@ export default class Component {
   }
 
   onMount() {
+    console.log(this.getEl('btnSave'))
+    console.log(this.getElId('btnSave'))
+
     this.dialog = $(this.el)
     this.dialog.on('hidden.bs.modal', () => {
       this.destroy()
