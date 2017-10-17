@@ -27,6 +27,7 @@ app.use(function(req, res, next) {
 app.get('/', require('./routes/home'))
 app.get('/home', require('./routes/home'))
 app.get('/test', require('./routes/test'))
+app.get('/issue-component-key', require('./routes/issue-component-key'))
 
 let logger = console
 app.listen(PORT, function(err) {

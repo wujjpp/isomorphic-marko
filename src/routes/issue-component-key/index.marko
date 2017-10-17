@@ -1,0 +1,16 @@
+<include('../../layouts/default.marko')>
+  <@tdk>
+    <app-tdk(input && input.tdk)/>
+  </@tdk>
+  <@styles>
+    <app-styles(input)/>
+  </@styles>
+  <@scripts>
+    <app-scripts(input)/>
+  </@scripts>
+  <@body>
+    <app-nav(input.user)/>
+    <app(input)/>
+    <app-footer/>
+  </@body>
+</include>

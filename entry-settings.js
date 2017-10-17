@@ -20,5 +20,10 @@ export default {
   test: {
     src: './src/routes/test/client.js',
     include: true
+  },
+
+  issueComponentKey: {
+    src: './src/routes/issue-component-key/client.js',
+    include: true
   }
 }
