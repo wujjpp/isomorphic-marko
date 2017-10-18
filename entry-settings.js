@@ -20,5 +20,11 @@ export default {
   test: {
     src: './src/routes/test/client.js',
     include: true
+  },
+
+  // issue-getEl
+  issueGetEl: {
+    src: './src/routes/issue-getEl/client.js',
+    include: true
   }
 }
