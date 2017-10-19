@@ -17,18 +17,14 @@ export default class Component {
 
     let other = this.getComponent('other')
     let otherId = other.id
-    // you can obtain the id of the "other" component, but you cannot get it's DOM by key
     console.log('other\'s id ---> ', otherId) // eslint-disable-line
     console.log('DOM other ---> ', other.el) // eslint-disable-line
-    console.log('you can obtain the id of the "other" component, but you cannot get it\'s DOM element by key') // eslint-disable-line
 
     console.log('---------------------------------------------------------') // eslint-disable-line
 
     let container = this.getComponent('container')
     let containerId = container.id
-    // you can not obtain id and DOM element of "container" component
     console.log('container\'s id ---> ', containerId) // eslint-disable-line
-    console.log('DOM container --->', container.el) // eslint-disable-line
-    console.log('you can not obtain id and DOM element of "container" component') // eslint-disable-line
+    console.log('DOM container --->', container.el) // eslint-disable-line    
   }
 }
