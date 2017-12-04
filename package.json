@@ -60,7 +60,7 @@
     "babel-register": "^6.24.0",
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.18.8",
-    "chalk": "^2.2.0",
+    "chalk": "^2.3.0",
     "core-js": "^2.4.1",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
